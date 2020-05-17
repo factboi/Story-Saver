@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class SearchUserTableViewCell: UITableViewCell, NibLoadable {
 	
@@ -19,6 +20,15 @@ class SearchUserTableViewCell: UITableViewCell, NibLoadable {
 		Decorator.decorate(self)
 	}
 
+	public func set(_ user: User) {
+		if let imageUrl = URL(string: user.profilePicUrl) {
+			Nuke.loadImage(with: imageUrl, options: ImageLoadingOptions(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: profileImageView)
+		}
+		usernameLabel.text = user.username
+		nameLabel.text = user.fullName
+		nameLabel.isHidden = user.fullName.isEmpty
+	}
+	
 }
 
 extension SearchUserTableViewCell {

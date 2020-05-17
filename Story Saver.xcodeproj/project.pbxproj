@@ -13,6 +13,8 @@
 		8A1E04542471816500F22984 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E04532471816500F22984 /* DataProvider.swift */; };
 		8A1E0457247181C900F22984 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1E0456247181C900F22984 /* SwiftSoup */; };
 		8A1E045A2471825100F22984 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1E04592471825100F22984 /* Nuke */; };
+		8A1E04602471938200F22984 /* StoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E045E2471938200F22984 /* StoriesViewController.swift */; };
+		8A1E04612471938200F22984 /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E045F2471938200F22984 /* StoriesViewController.xib */; };
 		8A51D1F1246DDBB3001388A4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */; };
 		8A51D1F2246DDBB3001388A4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */; };
 		8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A536D6F246DB38F004AC6B8 /* AppDelegate.swift */; };
@@ -40,6 +42,8 @@
 		8A1E044F247180A000F22984 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		8A1E04512471810600F22984 /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
 		8A1E04532471816500F22984 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		8A1E045E2471938200F22984 /* StoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewController.swift; sourceTree = "<group>"; };
+		8A1E045F2471938200F22984 /* StoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoriesViewController.xib; sourceTree = "<group>"; };
 		8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		8A536D6C246DB38F004AC6B8 /* Story Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Story Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +83,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A1E04622471938600F22984 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				8A1E045E2471938200F22984 /* StoriesViewController.swift */,
+				8A1E045F2471938200F22984 /* StoriesViewController.xib */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
 		8A536D63246DB38F004AC6B8 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 			children = (
 				8AE706EF2470A1C200395BE7 /* ViewController */,
 				8AE706EE2470A1B800395BE7 /* Onboarding */,
+				8A1E04622471938600F22984 /* Stories */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -294,6 +308,7 @@
 			files = (
 				8A536D7C246DB390004AC6B8 /* LaunchScreen.storyboard in Resources */,
 				8A536D86246DB42D004AC6B8 /* ViewController.xib in Resources */,
+				8A1E04612471938200F22984 /* StoriesViewController.xib in Resources */,
 				8A536D79246DB390004AC6B8 /* Assets.xcassets in Resources */,
 				8AE706FA2470A50500395BE7 /* SearchUserTableViewCell.xib in Resources */,
 				8AA971B0246F07F000A698C1 /* OnboardingCollectionViewCell.xib in Resources */,
@@ -311,6 +326,7 @@
 			files = (
 				8AA971B4246F104100A698C1 /* Extension+UIView.swift in Sources */,
 				8A536D74246DB38F004AC6B8 /* ViewController.swift in Sources */,
+				8A1E04602471938200F22984 /* StoriesViewController.swift in Sources */,
 				8A1E04542471816500F22984 /* DataProvider.swift in Sources */,
 				8AE706F62470A2C300395BE7 /* Router.swift in Sources */,
 				8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */,
