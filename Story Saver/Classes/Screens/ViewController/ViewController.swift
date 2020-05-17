@@ -16,7 +16,9 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	private var users: [String] = []
+
+	
+	private var users: [User] = []
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,6 +29,8 @@ class ViewController: UIViewController {
 	private func registerCells() {
 		tableView.register(SearchUserTableViewCell.nib, forCellReuseIdentifier: SearchUserTableViewCell.name)
 	}
+	
+
 	
 	private func delegating() {
 		tableView.delegate = self
