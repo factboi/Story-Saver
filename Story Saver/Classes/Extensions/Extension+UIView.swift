@@ -11,6 +11,7 @@ import UIKit
 extension UIView {
 	func round(value: CGFloat? = nil) {
 		layer.cornerRadius = value ?? bounds.height * 0.5
+		layer.masksToBounds = true
 	}
 	
 	func applyBorder(borderColor: UIColor, borderWidth: CGFloat? = nil) {

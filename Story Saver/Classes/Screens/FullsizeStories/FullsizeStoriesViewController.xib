@@ -7,9 +7,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoriesViewController" customModule="Story_Saver" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FullsizeStoriesViewController" customModule="Story_Saver" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="N3E-uT-15Y" id="Dhi-i7-lbR"/>
+                <outlet property="collectionView" destination="ace-YH-Yg3" id="5Bc-zt-ALN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,26 +18,26 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="N3E-uT-15Y">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ace-YH-Yg3">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="GVl-dg-H4U">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="ccu-Uj-vnV">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N3E-uT-15Y" secondAttribute="bottom" id="CLq-74-fwO"/>
-                <constraint firstItem="N3E-uT-15Y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cfI-6r-Ve3"/>
-                <constraint firstItem="N3E-uT-15Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dXg-kb-CfT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N3E-uT-15Y" secondAttribute="trailing" id="h7J-5l-rsL"/>
+                <constraint firstItem="ace-YH-Yg3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DXI-iD-F6j"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ace-YH-Yg3" secondAttribute="bottom" id="Ltc-Kq-SyN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ace-YH-Yg3" secondAttribute="trailing" id="N82-aK-TwI"/>
+                <constraint firstItem="ace-YH-Yg3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pHk-rO-pMw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="106"/>
+            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
         </view>
     </objects>
 </document>

@@ -92,6 +92,8 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		navigationItem.backBarButtonItem = .init(title: "", style: .plain, target: self, action: nil)
+		navigationController?.pushViewController(StoriesViewController(user: users[indexPath.item]), animated: true)
 	}
 }
 

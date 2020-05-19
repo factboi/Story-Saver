@@ -37,4 +37,14 @@ class DataProvider {
 		userService.getFullSizeProfileImage(of: user, completion: completion)
 	}
 	
+	func getDetailUserInfo(_ user: User, completion: @escaping (UserDetailInfo?) -> Void) {
+		userService.getDetailedUserInfo(user) { (info) in
+			guard let info = info else {
+				completion(nil)
+				return
+			}
+			completion(info)
+		}
+	}
+	
 }
