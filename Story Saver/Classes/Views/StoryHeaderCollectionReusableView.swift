@@ -15,6 +15,8 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 	@IBOutlet private weak var imageView: UIImageView! {
 		didSet {
 			imageView.alpha = 0
+			imageView.isUserInteractionEnabled = true
+			imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onImageTapped(_:))))
 		}
 	}
 	
@@ -31,6 +33,11 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 	@IBAction func expandButtonClicked(_ sender: UIButton) {
 		onExpandButtonClicked?()
 	}
+	
+	@objc private func onImageTapped(_ sender: UITapGestureRecognizer) {
+		onExpandButtonClicked?()
+	}
+	
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		Decorator.decorate(self)

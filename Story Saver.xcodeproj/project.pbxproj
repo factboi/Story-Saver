@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A1CE0E224759402001ACAAA /* FullsizeImageStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E024759402001ACAAA /* FullsizeImageStoryViewController.swift */; };
+		8A1CE0E324759402001ACAAA /* FullsizeImageStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E124759402001ACAAA /* FullsizeImageStoryViewController.xib */; };
+		8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */; };
 		8A1E044E2471805800F22984 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1E044D2471805800F22984 /* SwiftyJSON */; };
 		8A1E0450247180A000F22984 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E044F247180A000F22984 /* Story.swift */; };
 		8A1E04522471810600F22984 /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E04512471810600F22984 /* StoryService.swift */; };
@@ -21,10 +24,6 @@
 		8A1E046B2471993700F22984 /* StoryHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E04692471993700F22984 /* StoryHeaderCollectionReusableView.xib */; };
 		8A1E046E2471B0F900F22984 /* FullsizeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E046C2471B0F900F22984 /* FullsizeImageViewController.swift */; };
 		8A1E046F2471B0F900F22984 /* FullsizeImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E046D2471B0F900F22984 /* FullsizeImageViewController.xib */; };
-		8A2C2DBB24741173007AC333 /* FullsizeStoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2C2DB924741173007AC333 /* FullsizeStoriesViewController.swift */; };
-		8A2C2DBC24741173007AC333 /* FullsizeStoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2C2DBA24741173007AC333 /* FullsizeStoriesViewController.xib */; };
-		8A2C2DC02474194D007AC333 /* FullsizeStoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2C2DBE2474194D007AC333 /* FullsizeStoryCollectionViewCell.swift */; };
-		8A2C2DC12474194D007AC333 /* FullsizeStoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2C2DBF2474194D007AC333 /* FullsizeStoryCollectionViewCell.xib */; };
 		8A51D1F1246DDBB3001388A4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */; };
 		8A51D1F2246DDBB3001388A4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */; };
 		8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A536D6F246DB38F004AC6B8 /* AppDelegate.swift */; };
@@ -34,6 +33,7 @@
 		8A536D7C246DB390004AC6B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A536D7A246DB390004AC6B8 /* LaunchScreen.storyboard */; };
 		8A536D86246DB42D004AC6B8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A536D85246DB42D004AC6B8 /* ViewController.xib */; };
 		8A69AB982472D89300A260BC /* UserDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69AB972472D89300A260BC /* UserDetailInfo.swift */; };
+		8A7D33DB247454A0009F30AE /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A7D33DA247454A0009F30AE /* VideoPlayerView.swift */; };
 		8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */; };
 		8AA971B0246F07F000A698C1 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */; };
 		8AA971B2246F095200A698C1 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971B1246F095200A698C1 /* NibLoadable.swift */; };
@@ -50,6 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A1CE0E024759402001ACAAA /* FullsizeImageStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageStoryViewController.swift; sourceTree = "<group>"; };
+		8A1CE0E124759402001ACAAA /* FullsizeImageStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeImageStoryViewController.xib; sourceTree = "<group>"; };
+		8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		8A1E044F247180A000F22984 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		8A1E04512471810600F22984 /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
 		8A1E04532471816500F22984 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
@@ -61,10 +64,6 @@
 		8A1E04692471993700F22984 /* StoryHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		8A1E046C2471B0F900F22984 /* FullsizeImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageViewController.swift; sourceTree = "<group>"; };
 		8A1E046D2471B0F900F22984 /* FullsizeImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeImageViewController.xib; sourceTree = "<group>"; };
-		8A2C2DB924741173007AC333 /* FullsizeStoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeStoriesViewController.swift; sourceTree = "<group>"; };
-		8A2C2DBA24741173007AC333 /* FullsizeStoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeStoriesViewController.xib; sourceTree = "<group>"; };
-		8A2C2DBE2474194D007AC333 /* FullsizeStoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeStoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		8A2C2DBF2474194D007AC333 /* FullsizeStoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeStoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		8A536D6C246DB38F004AC6B8 /* Story Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Story Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +75,7 @@
 		8A536D7D246DB390004AC6B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A536D85246DB42D004AC6B8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8A69AB972472D89300A260BC /* UserDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInfo.swift; sourceTree = "<group>"; };
+		8A7D33DA247454A0009F30AE /* VideoPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
 		8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		8AA971B1246F095200A698C1 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -105,6 +105,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A1CE0D9247572AA001ACAAA /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				8AA971C3246F26EE00A698C1 /* PurchaseCollectionViewCell.swift */,
+				8AA971C4246F26EE00A698C1 /* PurchaseCollectionViewCell.xib */,
+				8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */,
+				8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		8A1CE0DA247572B5001ACAAA /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				8AE706F72470A50500395BE7 /* SearchUserTableViewCell.swift */,
+				8AE706F82470A50500395BE7 /* SearchUserTableViewCell.xib */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		8A1CE0DB247572C0001ACAAA /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				8A1E0463247198D700F22984 /* StoryCollectionViewCell.swift */,
+				8A1E0464247198D700F22984 /* StoryCollectionViewCell.xib */,
+			);
+			path = Story;
+			sourceTree = "<group>";
+		};
 		8A1E04622471938600F22984 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,8 +146,8 @@
 		8A2C2DB82474113F007AC333 /* FullsizeStories */ = {
 			isa = PBXGroup;
 			children = (
-				8A2C2DB924741173007AC333 /* FullsizeStoriesViewController.swift */,
-				8A2C2DBA24741173007AC333 /* FullsizeStoriesViewController.xib */,
+				8A1CE0E024759402001ACAAA /* FullsizeImageStoryViewController.swift */,
+				8A1CE0E124759402001ACAAA /* FullsizeImageStoryViewController.xib */,
 			);
 			path = FullsizeStories;
 			sourceTree = "<group>";
@@ -189,6 +218,7 @@
 				8AE706F02470A1D000395BE7 /* Cells */,
 				8A1E04682471993700F22984 /* StoryHeaderCollectionReusableView.swift */,
 				8A1E04692471993700F22984 /* StoryHeaderCollectionReusableView.xib */,
+				8A7D33DA247454A0009F30AE /* VideoPlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,16 +256,9 @@
 		8AE706F02470A1D000395BE7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8AA971C3246F26EE00A698C1 /* PurchaseCollectionViewCell.swift */,
-				8AA971C4246F26EE00A698C1 /* PurchaseCollectionViewCell.xib */,
-				8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */,
-				8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */,
-				8AE706F72470A50500395BE7 /* SearchUserTableViewCell.swift */,
-				8AE706F82470A50500395BE7 /* SearchUserTableViewCell.xib */,
-				8A1E0463247198D700F22984 /* StoryCollectionViewCell.swift */,
-				8A1E0464247198D700F22984 /* StoryCollectionViewCell.xib */,
-				8A2C2DBE2474194D007AC333 /* FullsizeStoryCollectionViewCell.swift */,
-				8A2C2DBF2474194D007AC333 /* FullsizeStoryCollectionViewCell.xib */,
+				8A1CE0DB247572C0001ACAAA /* Story */,
+				8A1CE0DA247572B5001ACAAA /* Search */,
+				8A1CE0D9247572AA001ACAAA /* Onboarding */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -252,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				8AA971B3246F104100A698C1 /* Extension+UIView.swift */,
+				8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -355,18 +379,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A2C2DBC24741173007AC333 /* FullsizeStoriesViewController.xib in Resources */,
 				8A1E046B2471993700F22984 /* StoryHeaderCollectionReusableView.xib in Resources */,
 				8A536D7C246DB390004AC6B8 /* LaunchScreen.storyboard in Resources */,
 				8A536D86246DB42D004AC6B8 /* ViewController.xib in Resources */,
 				8A1E04612471938200F22984 /* StoriesViewController.xib in Resources */,
 				8A536D79246DB390004AC6B8 /* Assets.xcassets in Resources */,
 				8A1E0466247198D700F22984 /* StoryCollectionViewCell.xib in Resources */,
-				8A2C2DC12474194D007AC333 /* FullsizeStoryCollectionViewCell.xib in Resources */,
 				8AE706FA2470A50500395BE7 /* SearchUserTableViewCell.xib in Resources */,
 				8AA971B0246F07F000A698C1 /* OnboardingCollectionViewCell.xib in Resources */,
 				8AA971C6246F26EE00A698C1 /* PurchaseCollectionViewCell.xib in Resources */,
 				8A1E046F2471B0F900F22984 /* FullsizeImageViewController.xib in Resources */,
+				8A1CE0E324759402001ACAAA /* FullsizeImageStoryViewController.xib in Resources */,
 				8A51D1F2246DDBB3001388A4 /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,6 +409,7 @@
 				8A1E04542471816500F22984 /* DataProvider.swift in Sources */,
 				8A1E0465247198D700F22984 /* StoryCollectionViewCell.swift in Sources */,
 				8AE706F62470A2C300395BE7 /* Router.swift in Sources */,
+				8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */,
 				8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */,
 				8AE706F92470A50500395BE7 /* SearchUserTableViewCell.swift in Sources */,
 				8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */,
@@ -396,11 +420,11 @@
 				8A1E04522471810600F22984 /* StoryService.swift in Sources */,
 				8AE706FC2470A93B00395BE7 /* User.swift in Sources */,
 				8A1E046E2471B0F900F22984 /* FullsizeImageViewController.swift in Sources */,
-				8A2C2DBB24741173007AC333 /* FullsizeStoriesViewController.swift in Sources */,
 				8AA971B2246F095200A698C1 /* NibLoadable.swift in Sources */,
 				8A536D72246DB38F004AC6B8 /* SceneDelegate.swift in Sources */,
 				8A51D1F1246DDBB3001388A4 /* OnboardingViewController.swift in Sources */,
-				8A2C2DC02474194D007AC333 /* FullsizeStoryCollectionViewCell.swift in Sources */,
+				8A7D33DB247454A0009F30AE /* VideoPlayerView.swift in Sources */,
+				8A1CE0E224759402001ACAAA /* FullsizeImageStoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

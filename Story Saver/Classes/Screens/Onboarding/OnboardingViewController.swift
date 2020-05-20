@@ -47,7 +47,6 @@ class OnboardingViewController: UIViewController {
 	}
 	
 	@objc private func nextButtonClicked(_ sender: UIButton) {
-		print("Tap")
 	}
 	
 }
@@ -85,7 +84,6 @@ extension OnboardingViewController: UICollectionViewDelegate {
 
 extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		print(collectionView.bounds.size)
 		return collectionView.bounds.size
 	}
 }

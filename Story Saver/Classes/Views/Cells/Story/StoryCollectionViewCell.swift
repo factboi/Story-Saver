@@ -49,6 +49,7 @@ extension StoryCollectionViewCell {
 	fileprivate final class Decorator {
 		static func decorate(_ cell: StoryCollectionViewCell) {
 			cell.round(value: 4)
+			cell.applyBorder(borderColor: .black, borderWidth: 0.5)
 			cell.storyTypeImageView.superview!.round()
 		}
 	}

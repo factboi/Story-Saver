@@ -13,12 +13,11 @@ class StoriesViewController: UIViewController {
 	@IBOutlet private weak var collectionView: UICollectionView!
 	
 	private var stories: [Story] = []
-	
 	private let user: User
-	
 	private let dataProvider = DataProvider()
-	
 	private var userDetailInfo: UserDetailInfo?
+	
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -77,7 +76,6 @@ extension StoriesViewController: UICollectionViewDataSource {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StoryCollectionViewCell.name, for: indexPath) as! StoryCollectionViewCell
 		let story = stories[indexPath.item]
 		cell.set(story)
-		print(indexPath.item)
 		return cell
 	}
 	
@@ -94,19 +92,19 @@ extension StoriesViewController: UICollectionViewDataSource {
 }
 
 extension StoriesViewController: UICollectionViewDelegate {
-	
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		let story = stories[indexPath.item]
+		story.video.isEmpty ? present(FullsizeImageStoryViewController(story: story), animated: true) : playVideoByUrl(story.video)
+	}
+}
+
+extension StoriesViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		let width = (collectionView.bounds.width - 32) / 3
 		return .init(width: width, height: width)
 	}
 	
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		navigationController?.pushViewController(FullsizeStoriesViewController(stories: stories, indexPath: indexPath), animated: true)
-	}
-}
-
-extension StoriesViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-		return .init(width: view.bounds.width, height: view.bounds.height * 0.1)
+		return .init(width: view.bounds.width, height: view.bounds.height * 0.2)
 	}
 }
