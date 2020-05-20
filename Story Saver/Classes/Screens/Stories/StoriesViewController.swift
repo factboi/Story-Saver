@@ -105,6 +105,6 @@ extension StoriesViewController: UICollectionViewDelegateFlowLayout {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-		return .init(width: view.bounds.width, height: view.bounds.height * 0.2)
+		return .init(width: view.bounds.width, height: view.bounds.height * 0.5)
 	}
 }

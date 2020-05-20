@@ -12,9 +12,13 @@ import Nuke
 
 class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 
+	@IBOutlet weak var expandButton: UIButton!
+	@IBOutlet weak var highlightsCollectionView: UICollectionView!
+	@IBOutlet weak var followingCountLabel: UILabel!
+	@IBOutlet weak var followersCountLabel: UILabel!
+	@IBOutlet weak var fullNameLabel: UILabel!
 	@IBOutlet private weak var imageView: UIImageView! {
 		didSet {
-			imageView.alpha = 0
 			imageView.isUserInteractionEnabled = true
 			imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(onImageTapped(_:))))
 		}
@@ -24,10 +28,21 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 	
 	public func set(_ userInfo: UserDetailInfo) {
 		if let imageUrl = URL(string: userInfo.profilePicUrlHd) {
-			Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: imageView, completion: .some({ (_) in
-				self.imageView.alpha = 1
-			}))
+			Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: imageView)
 		}
+		fullNameLabel.text = userInfo.fullName
+		followersCountLabel.text = "\(userInfo.followersCount.count)"
+		followingCountLabel.text = "\(userInfo.followingCount.count)"
+		subviews.forEach { (view) in
+			UIView.animate(withDuration: 0.3) {
+				view.alpha = 1
+			}
+		}
+	}
+	
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		subviews.forEach({$0.alpha = 0})
 	}
 	
 	@IBAction func expandButtonClicked(_ sender: UIButton) {
@@ -48,6 +63,7 @@ extension StoryHeaderCollectionReusableView {
 	fileprivate final class Decorator {
 		static func decorate(_ header: StoryHeaderCollectionReusableView) {
 			header.imageView.round()
+			
 		}
 	}
 }

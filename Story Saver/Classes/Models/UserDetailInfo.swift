@@ -12,10 +12,12 @@ struct UserDetailInfo: Decodable {
 	let followersCount: EdgeFollowClass
 	let followingCount: EdgeFollowClass
 	let profilePicUrlHd: String
+	let fullName: String
 	private enum CodingKeys: String, CodingKey {
 		case followersCount = "edge_followed_by"
 		case followingCount = "edge_follow"
-		case profilePicUrlHd = "profile_pic_url_hd" 
+		case profilePicUrlHd = "profile_pic_url_hd"
+		case fullName = "full_name"
 	}
 }
 
