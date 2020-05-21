@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertViewController" customModule="Story_Saver" customModuleProvider="target">
+            <connections>
+                <outlet property="cancelButton" destination="82X-3V-TYd" id="LZl-sI-ye9"/>
+                <outlet property="containerView" destination="shq-Ka-v4X" id="Ea2-wk-7IL"/>
+                <outlet property="emojiStatusLabel" destination="F5x-FR-h45" id="tNe-UC-n98"/>
+                <outlet property="settingsButton" destination="Dvm-rJ-qij" id="aBN-cI-Lb6"/>
+                <outlet property="statusMessageLabel" destination="FZi-qR-mOd" id="3SS-na-MdV"/>
+                <outlet property="statusTitleLabel" destination="Id4-du-IDi" id="KRI-Wc-L7g"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shq-Ka-v4X">
+                    <rect key="frame" x="52" y="291.5" width="310.5" height="313"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ytB-DJ-NwO">
+                            <rect key="frame" x="16" y="201" width="278.5" height="96"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvm-rJ-qij">
+                                    <rect key="frame" x="0.0" y="0.0" width="278.5" height="40"/>
+                                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="63g-lM-Tby"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <state key="normal" title="Go To Settings">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="settingsButtonClicked:" destination="-1" eventType="touchUpInside" id="htc-iS-JZH"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="82X-3V-TYd">
+                                    <rect key="frame" x="0.0" y="56" width="278.5" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="VRW-NH-87l"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                    <state key="normal" title="Cancel">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="cancelButtonClicked:" destination="-1" eventType="touchUpInside" id="E1L-xC-uMp"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Id4-du-IDi">
+                            <rect key="frame" x="8" y="102" width="294.5" height="22.5"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Give us access to photo library to save stories" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZi-qR-mOd">
+                            <rect key="frame" x="16" y="140.5" width="278.5" height="44.5"/>
+                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="😞" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5x-FR-h45">
+                            <rect key="frame" x="120" y="16" width="70" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="7bZ-tg-lAj"/>
+                                <constraint firstAttribute="width" constant="70" id="MYs-L6-NGz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="black" pointSize="61"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="F5x-FR-h45" firstAttribute="centerX" secondItem="shq-Ka-v4X" secondAttribute="centerX" id="6Ei-C4-amd"/>
+                        <constraint firstItem="ytB-DJ-NwO" firstAttribute="top" secondItem="FZi-qR-mOd" secondAttribute="bottom" constant="16" id="8w2-z2-C6b"/>
+                        <constraint firstItem="F5x-FR-h45" firstAttribute="top" secondItem="shq-Ka-v4X" secondAttribute="top" constant="16" id="EHW-YV-HA8"/>
+                        <constraint firstItem="Id4-du-IDi" firstAttribute="top" secondItem="F5x-FR-h45" secondAttribute="bottom" constant="16" id="N3e-nO-9mv"/>
+                        <constraint firstItem="FZi-qR-mOd" firstAttribute="leading" secondItem="shq-Ka-v4X" secondAttribute="leading" constant="16" id="RGk-gf-LNx"/>
+                        <constraint firstItem="Id4-du-IDi" firstAttribute="leading" secondItem="shq-Ka-v4X" secondAttribute="leading" constant="8" id="aui-YH-70g"/>
+                        <constraint firstItem="FZi-qR-mOd" firstAttribute="top" secondItem="Id4-du-IDi" secondAttribute="bottom" constant="16" id="ee4-21-eTl"/>
+                        <constraint firstAttribute="bottom" secondItem="ytB-DJ-NwO" secondAttribute="bottom" constant="16" id="mWb-BT-gTt"/>
+                        <constraint firstAttribute="trailing" secondItem="ytB-DJ-NwO" secondAttribute="trailing" constant="16" id="rmx-lq-lDD"/>
+                        <constraint firstAttribute="trailing" secondItem="Id4-du-IDi" secondAttribute="trailing" constant="8" id="tRH-n6-FXy"/>
+                        <constraint firstAttribute="trailing" secondItem="FZi-qR-mOd" secondAttribute="trailing" constant="16" id="tqk-Gy-K8O"/>
+                        <constraint firstItem="ytB-DJ-NwO" firstAttribute="leading" secondItem="shq-Ka-v4X" secondAttribute="leading" constant="16" id="wBq-QA-8Xr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="shq-Ka-v4X" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="EHT-q0-BA4"/>
+                <constraint firstItem="shq-Ka-v4X" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.75" id="Pkz-eT-J6v"/>
+                <constraint firstItem="shq-Ka-v4X" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="QPE-y2-q0p"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-506" y="64"/>
+        </view>
+    </objects>
+</document>

@@ -11,10 +11,24 @@ import Nuke
 
 class StoryCollectionViewCell: UICollectionViewCell, NibLoadable {
 
+	@IBOutlet weak var downloadButton: UIButton!
 	@IBOutlet weak var previewImageView: UIImageView!
 	@IBOutlet weak var storyTypeImageView: UIImageView! {
 		didSet {
 			storyTypeImageView.alpha = 0
+		}
+	}
+	
+	var onDownloadClicked: ((_ story: Story) -> ())?
+	
+	var story: Story! {
+		didSet {
+			if let url = URL(string: story.preview) {
+				Nuke.loadImage(with: url, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)),into: previewImageView, completion: .some({ (_) in
+					self.storyTypeImageView.alpha = 1
+				}))
+			}
+			storyTypeImageView.image = story.video.isEmpty ? #imageLiteral(resourceName: "image") : #imageLiteral(resourceName: "video")
 		}
 	}
 	
@@ -29,19 +43,14 @@ class StoryCollectionViewCell: UICollectionViewCell, NibLoadable {
 			}, completion: nil)
 		}
 	}
-
-	public func set(_ story: Story) {
-		if let url = URL(string: story.preview) {
-			Nuke.loadImage(with: url, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)),into: previewImageView, completion: .some({ (_) in
-				self.storyTypeImageView.alpha = 1
-			}))
-		}
-		storyTypeImageView.image = story.video.isEmpty ? #imageLiteral(resourceName: "image") : #imageLiteral(resourceName: "video")
-	}
 	
 	override func draw(_ rect: CGRect) {
 		super.draw(rect)
 		Decorator.decorate(self)
+	}
+	
+	@IBAction func downloadButtonClicked(_ sender: UIButton) {
+		onDownloadClicked?(self.story)
 	}
 }
 
@@ -51,6 +60,7 @@ extension StoryCollectionViewCell {
 			cell.round(value: 4)
 			cell.applyBorder(borderColor: .black, borderWidth: 0.5)
 			cell.storyTypeImageView.superview!.round()
+			cell.downloadButton.round()
 		}
 	}
 }

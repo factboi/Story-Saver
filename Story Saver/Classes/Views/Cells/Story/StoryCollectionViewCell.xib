@@ -39,20 +39,36 @@
                             <constraint firstItem="5WC-aZ-lid" firstAttribute="centerY" secondItem="brE-OI-OnH" secondAttribute="centerY" id="shH-PW-mI3"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K6P-cA-anT">
+                        <rect key="frame" x="109.5" y="4" width="37.5" height="38"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="K6P-cA-anT" secondAttribute="height" multiplier="1:1" id="y1Z-MI-aAe"/>
+                        </constraints>
+                        <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                        <state key="normal" image="web"/>
+                        <connections>
+                            <action selector="downloadButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="EXw-9G-D4T"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <constraints>
+                <constraint firstItem="K6P-cA-anT" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.25" id="Cjf-pI-cr9"/>
                 <constraint firstItem="brE-OI-OnH" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="EKi-H9-tnK"/>
+                <constraint firstItem="K6P-cA-anT" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Wjz-Fz-0xQ"/>
                 <constraint firstAttribute="bottom" secondItem="KkN-s0-krG" secondAttribute="bottom" id="asp-fb-0gI"/>
                 <constraint firstAttribute="trailing" secondItem="KkN-s0-krG" secondAttribute="trailing" id="c1G-GT-Yhc"/>
                 <constraint firstItem="brE-OI-OnH" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.25" id="nFa-nj-cNA"/>
                 <constraint firstItem="KkN-s0-krG" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tPe-Qu-1f6"/>
+                <constraint firstAttribute="trailing" secondItem="K6P-cA-anT" secondAttribute="trailing" constant="4" id="wvA-vh-4EO"/>
                 <constraint firstItem="KkN-s0-krG" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xc6-r4-sPi"/>
                 <constraint firstItem="brE-OI-OnH" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="ymf-Nj-VPS"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="151" height="169"/>
             <connections>
+                <outlet property="downloadButton" destination="K6P-cA-anT" id="aCs-jA-cIL"/>
                 <outlet property="previewImageView" destination="KkN-s0-krG" id="T5o-8k-vta"/>
                 <outlet property="storyTypeImageView" destination="5WC-aZ-lid" id="RGa-4X-Eet"/>
             </connections>
@@ -61,5 +77,6 @@
     </objects>
     <resources>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="web" width="64" height="64"/>
     </resources>
 </document>
