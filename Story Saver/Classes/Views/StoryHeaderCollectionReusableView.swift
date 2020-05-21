@@ -11,9 +11,25 @@ import Nuke
 
 
 class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
-
+	
+	var highlightsPreviewViewController: HighlightsPreviewViewController?
+	private var user: User? {
+		didSet {
+			guard let user = user else {return}
+			highlightsPreviewViewController = HighlightsPreviewViewController(user: user)
+			if let view = highlightsPreviewViewController?.view {
+				view.translatesAutoresizingMaskIntoConstraints = false
+				highlightsContainerView.addSubview(view)
+				view.topAnchor.constraint(equalTo: highlightsContainerView.topAnchor).isActive = true
+				view.bottomAnchor.constraint(equalTo: highlightsContainerView.bottomAnchor).isActive = true
+				view.leadingAnchor.constraint(equalTo: highlightsContainerView.leadingAnchor).isActive = true
+				view.trailingAnchor.constraint(equalTo: highlightsContainerView.trailingAnchor).isActive = true
+			}
+		}
+	}
+	
+	@IBOutlet weak var highlightsContainerView: UIView!
 	@IBOutlet weak var expandButton: UIButton!
-	@IBOutlet weak var highlightsCollectionView: UICollectionView!
 	@IBOutlet weak var followingCountLabel: UILabel!
 	@IBOutlet weak var followersCountLabel: UILabel!
 	@IBOutlet weak var fullNameLabel: UILabel!
@@ -26,7 +42,8 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 	
 	var onExpandButtonClicked: (() -> Void)?
 	
-	public func set(_ userInfo: UserDetailInfo) {
+	public func set(_ userInfo: UserDetailInfo, user: User) {
+		self.user = user
 		if let imageUrl = URL(string: userInfo.profilePicUrlHd) {
 			Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: imageView)
 		}
@@ -40,9 +57,13 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 		}
 	}
 	
+	
+	
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		subviews.forEach({$0.alpha = 0})
+		
 	}
 	
 	@IBAction func expandButtonClicked(_ sender: UIButton) {
@@ -58,6 +79,8 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 		Decorator.decorate(self)
 	}
 }
+
+
 
 extension StoryHeaderCollectionReusableView {
 	fileprivate final class Decorator {

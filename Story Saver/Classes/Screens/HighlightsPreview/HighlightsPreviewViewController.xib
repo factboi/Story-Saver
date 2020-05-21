@@ -7,37 +7,37 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoriesViewController" customModule="Story_Saver" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HighlightsPreviewViewController" customModule="Story_Saver" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="N3E-uT-15Y" id="Dhi-i7-lbR"/>
-                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="collectionView" destination="hMx-Lw-qu0" id="2aW-b1-csU"/>
+                <outlet property="view" destination="iN0-l3-epB" id="8vd-L1-z3H"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="N3E-uT-15Y">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hMx-Lw-qu0">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="GVl-dg-H4U">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VO8-ea-e9d">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N3E-uT-15Y" secondAttribute="bottom" id="CLq-74-fwO"/>
-                <constraint firstItem="N3E-uT-15Y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cfI-6r-Ve3"/>
-                <constraint firstItem="N3E-uT-15Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dXg-kb-CfT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N3E-uT-15Y" secondAttribute="trailing" id="h7J-5l-rsL"/>
+                <constraint firstItem="hMx-Lw-qu0" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Nzz-Si-csh"/>
+                <constraint firstItem="hMx-Lw-qu0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ou5-zv-yKs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hMx-Lw-qu0" secondAttribute="bottom" id="PqJ-ee-dcz"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hMx-Lw-qu0" secondAttribute="trailing" id="Q4W-J2-Jul"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="106"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="94" y="129"/>
         </view>
     </objects>
 </document>

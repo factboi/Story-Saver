@@ -17,6 +17,7 @@ class StoriesViewController: UIViewController {
 	private let dataProvider = DataProvider()
 	private var userDetailInfo: UserDetailInfo?
 	
+	private let s = StoryService()
 	
 	
 	override func viewDidLoad() {
@@ -55,6 +56,11 @@ class StoriesViewController: UIViewController {
 		collectionView.register(StoryHeaderCollectionReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StoryHeaderCollectionReusableView.name)
 	}
 	
+	override func viewWillLayoutSubviews() {
+		super.viewWillLayoutSubviews()
+		collectionView.collectionViewLayout.invalidateLayout()
+	}
+	
 	init(user: User) {
 		self.user = user
 		super.init(nibName: nil, bundle: nil)
@@ -67,7 +73,7 @@ class StoriesViewController: UIViewController {
 }
 
 extension StoriesViewController: UICollectionViewDataSource {
-
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		return stories.count
 	}
@@ -85,8 +91,12 @@ extension StoriesViewController: UICollectionViewDataSource {
 			self.present(FullsizeImageViewController(user: self.user), animated: true)
 		}
 		if let info = userDetailInfo {
-			header.set(info)
+			header.set(info, user: user)
 		}
+		header.highlightsPreviewViewController?.onHighlightPreviewTapped = { [unowned self] (user, highlightJsonModel) in
+			self.navigationController?.pushViewController(FullsizeHighlightsViewController(user: user, highlightJsonModel: highlightJsonModel), animated: true)
+		}
+		
 		return header
 	}
 }
@@ -105,6 +115,7 @@ extension StoriesViewController: UICollectionViewDelegateFlowLayout {
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		
 		return .init(width: view.bounds.width, height: view.bounds.height * 0.5)
 	}
 }

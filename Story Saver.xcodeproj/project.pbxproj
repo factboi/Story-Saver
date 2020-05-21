@@ -10,6 +10,9 @@
 		8A1CE0E224759402001ACAAA /* FullsizeImageStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E024759402001ACAAA /* FullsizeImageStoryViewController.swift */; };
 		8A1CE0E324759402001ACAAA /* FullsizeImageStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E124759402001ACAAA /* FullsizeImageStoryViewController.xib */; };
 		8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */; };
+		8A1CE0E72475A55B001ACAAA /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E62475A55B001ACAAA /* Highlight.swift */; };
+		8A1CE0EC2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0EA2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift */; };
+		8A1CE0ED2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1CE0EB2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib */; };
 		8A1E044E2471805800F22984 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1E044D2471805800F22984 /* SwiftyJSON */; };
 		8A1E0450247180A000F22984 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E044F247180A000F22984 /* Story.swift */; };
 		8A1E04522471810600F22984 /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E04512471810600F22984 /* StoryService.swift */; };
@@ -24,6 +27,13 @@
 		8A1E046B2471993700F22984 /* StoryHeaderCollectionReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E04692471993700F22984 /* StoryHeaderCollectionReusableView.xib */; };
 		8A1E046E2471B0F900F22984 /* FullsizeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E046C2471B0F900F22984 /* FullsizeImageViewController.swift */; };
 		8A1E046F2471B0F900F22984 /* FullsizeImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E046D2471B0F900F22984 /* FullsizeImageViewController.xib */; };
+		8A2B01CE24769B97006DD757 /* HighlightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B01CD24769B97006DD757 /* HighlightsService.swift */; };
+		8A364EF22475D99600354359 /* HighlightsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A364EF12475D99600354359 /* HighlightsPreviewViewController.swift */; };
+		8A364EF42475DA8A00354359 /* HighlightsPreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A364EF32475DA8A00354359 /* HighlightsPreviewViewController.xib */; };
+		8A364EF82475F08100354359 /* FullsizeHighlightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A364EF62475F08100354359 /* FullsizeHighlightsViewController.swift */; };
+		8A364EF92475F08100354359 /* FullsizeHighlightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A364EF72475F08100354359 /* FullsizeHighlightsViewController.xib */; };
+		8A364EFE2475F1BA00354359 /* HighlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A364EFC2475F1BA00354359 /* HighlightCollectionViewCell.swift */; };
+		8A364EFF2475F1BA00354359 /* HighlightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A364EFD2475F1BA00354359 /* HighlightCollectionViewCell.xib */; };
 		8A51D1F1246DDBB3001388A4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */; };
 		8A51D1F2246DDBB3001388A4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */; };
 		8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A536D6F246DB38F004AC6B8 /* AppDelegate.swift */; };
@@ -52,6 +62,9 @@
 		8A1CE0E024759402001ACAAA /* FullsizeImageStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageStoryViewController.swift; sourceTree = "<group>"; };
 		8A1CE0E124759402001ACAAA /* FullsizeImageStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeImageStoryViewController.xib; sourceTree = "<group>"; };
 		8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		8A1CE0E62475A55B001ACAAA /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
+		8A1CE0EA2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A1CE0EB2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightPreviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		8A1E044F247180A000F22984 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		8A1E04512471810600F22984 /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
 		8A1E04532471816500F22984 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
@@ -63,6 +76,14 @@
 		8A1E04692471993700F22984 /* StoryHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		8A1E046C2471B0F900F22984 /* FullsizeImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageViewController.swift; sourceTree = "<group>"; };
 		8A1E046D2471B0F900F22984 /* FullsizeImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeImageViewController.xib; sourceTree = "<group>"; };
+		8A2B01CC247699EA006DD757 /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		8A2B01CD24769B97006DD757 /* HighlightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsService.swift; sourceTree = "<group>"; };
+		8A364EF12475D99600354359 /* HighlightsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsPreviewViewController.swift; sourceTree = "<group>"; };
+		8A364EF32475DA8A00354359 /* HighlightsPreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightsPreviewViewController.xib; sourceTree = "<group>"; };
+		8A364EF62475F08100354359 /* FullsizeHighlightsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeHighlightsViewController.swift; sourceTree = "<group>"; };
+		8A364EF72475F08100354359 /* FullsizeHighlightsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeHighlightsViewController.xib; sourceTree = "<group>"; };
+		8A364EFC2475F1BA00354359 /* HighlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCollectionViewCell.swift; sourceTree = "<group>"; };
+		8A364EFD2475F1BA00354359 /* HighlightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightCollectionViewCell.xib; sourceTree = "<group>"; };
 		8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		8A536D6C246DB38F004AC6B8 /* Story Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Story Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -159,6 +180,33 @@
 			path = FullsizeImage;
 			sourceTree = "<group>";
 		};
+		8A364EF52475F05300354359 /* HighlightsPreview */ = {
+			isa = PBXGroup;
+			children = (
+				8A364EF12475D99600354359 /* HighlightsPreviewViewController.swift */,
+				8A364EF32475DA8A00354359 /* HighlightsPreviewViewController.xib */,
+			);
+			path = HighlightsPreview;
+			sourceTree = "<group>";
+		};
+		8A364EFA2475F08800354359 /* FullsizeHighlights */ = {
+			isa = PBXGroup;
+			children = (
+				8A364EF62475F08100354359 /* FullsizeHighlightsViewController.swift */,
+				8A364EF72475F08100354359 /* FullsizeHighlightsViewController.xib */,
+			);
+			path = FullsizeHighlights;
+			sourceTree = "<group>";
+		};
+		8A364EFB2475F1A200354359 /* Highlight */ = {
+			isa = PBXGroup;
+			children = (
+				8A364EFC2475F1BA00354359 /* HighlightCollectionViewCell.swift */,
+				8A364EFD2475F1BA00354359 /* HighlightCollectionViewCell.xib */,
+			);
+			path = Highlight;
+			sourceTree = "<group>";
+		};
 		8A536D63246DB38F004AC6B8 = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +228,7 @@
 			children = (
 				8A536D84246DB3D7004AC6B8 /* Classes */,
 				8A536D83246DB3AB004AC6B8 /* Resources */,
+				8A2B01CC247699EA006DD757 /* Test.playground */,
 			);
 			path = "Story Saver";
 			sourceTree = "<group>";
@@ -228,6 +277,8 @@
 				8AE706EE2470A1B800395BE7 /* Onboarding */,
 				8A1E04622471938600F22984 /* Stories */,
 				8A2C2DBD2474190C007AC333 /* FullsizeImage */,
+				8A364EF52475F05300354359 /* HighlightsPreview */,
+				8A364EFA2475F08800354359 /* FullsizeHighlights */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -253,9 +304,12 @@
 		8AE706F02470A1D000395BE7 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8A364EFB2475F1A200354359 /* Highlight */,
 				8A1CE0DB247572C0001ACAAA /* Story */,
 				8A1CE0DA247572B5001ACAAA /* Search */,
 				8A1CE0D9247572AA001ACAAA /* Onboarding */,
+				8A1CE0EA2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift */,
+				8A1CE0EB2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -284,6 +338,7 @@
 				8AE706FB2470A93B00395BE7 /* User.swift */,
 				8A1E044F247180A000F22984 /* Story.swift */,
 				8A69AB972472D89300A260BC /* UserDetailInfo.swift */,
+				8A1CE0E62475A55B001ACAAA /* Highlight.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +357,7 @@
 				8AE706FE2470AA7500395BE7 /* UserService.swift */,
 				8A1E04512471810600F22984 /* StoryService.swift */,
 				8A1E04532471816500F22984 /* DataProvider.swift */,
+				8A2B01CD24769B97006DD757 /* HighlightsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -378,9 +434,12 @@
 			files = (
 				8A1E046B2471993700F22984 /* StoryHeaderCollectionReusableView.xib in Resources */,
 				8A536D7C246DB390004AC6B8 /* LaunchScreen.storyboard in Resources */,
+				8A364EF92475F08100354359 /* FullsizeHighlightsViewController.xib in Resources */,
 				8A536D86246DB42D004AC6B8 /* ViewController.xib in Resources */,
+				8A364EF42475DA8A00354359 /* HighlightsPreviewViewController.xib in Resources */,
 				8A1E04612471938200F22984 /* StoriesViewController.xib in Resources */,
 				8A536D79246DB390004AC6B8 /* Assets.xcassets in Resources */,
+				8A1CE0ED2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib in Resources */,
 				8A1E0466247198D700F22984 /* StoryCollectionViewCell.xib in Resources */,
 				8AE706FA2470A50500395BE7 /* SearchUserTableViewCell.xib in Resources */,
 				8AA971B0246F07F000A698C1 /* OnboardingCollectionViewCell.xib in Resources */,
@@ -388,6 +447,7 @@
 				8A1E046F2471B0F900F22984 /* FullsizeImageViewController.xib in Resources */,
 				8A1CE0E324759402001ACAAA /* FullsizeImageStoryViewController.xib in Resources */,
 				8A51D1F2246DDBB3001388A4 /* OnboardingViewController.xib in Resources */,
+				8A364EFF2475F1BA00354359 /* HighlightCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,24 +459,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A1E046A2471993700F22984 /* StoryHeaderCollectionReusableView.swift in Sources */,
+				8A2B01CE24769B97006DD757 /* HighlightsService.swift in Sources */,
 				8AA971B4246F104100A698C1 /* Extension+UIView.swift in Sources */,
 				8A536D74246DB38F004AC6B8 /* ViewController.swift in Sources */,
 				8A1E04602471938200F22984 /* StoriesViewController.swift in Sources */,
 				8A69AB982472D89300A260BC /* UserDetailInfo.swift in Sources */,
 				8A1E04542471816500F22984 /* DataProvider.swift in Sources */,
+				8A364EF82475F08100354359 /* FullsizeHighlightsViewController.swift in Sources */,
 				8A1E0465247198D700F22984 /* StoryCollectionViewCell.swift in Sources */,
 				8AE706F62470A2C300395BE7 /* Router.swift in Sources */,
 				8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */,
 				8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */,
+				8A1CE0E72475A55B001ACAAA /* Highlight.swift in Sources */,
 				8AE706F92470A50500395BE7 /* SearchUserTableViewCell.swift in Sources */,
+				8A1CE0EC2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift in Sources */,
 				8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */,
 				8AE706FF2470AA7500395BE7 /* UserService.swift in Sources */,
 				8A1E0450247180A000F22984 /* Story.swift in Sources */,
+				8A364EFE2475F1BA00354359 /* HighlightCollectionViewCell.swift in Sources */,
 				8AA971C5246F26EE00A698C1 /* PurchaseCollectionViewCell.swift in Sources */,
 				8AA971C2246F18AC00A698C1 /* Feature.swift in Sources */,
 				8A1E04522471810600F22984 /* StoryService.swift in Sources */,
 				8AE706FC2470A93B00395BE7 /* User.swift in Sources */,
 				8A1E046E2471B0F900F22984 /* FullsizeImageViewController.swift in Sources */,
+				8A364EF22475D99600354359 /* HighlightsPreviewViewController.swift in Sources */,
 				8AA971B2246F095200A698C1 /* NibLoadable.swift in Sources */,
 				8A536D72246DB38F004AC6B8 /* SceneDelegate.swift in Sources */,
 				8A51D1F1246DDBB3001388A4 /* OnboardingViewController.swift in Sources */,

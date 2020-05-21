@@ -12,6 +12,7 @@ class DataProvider {
 	
 	private let storyService = StoryService()
 	private let userService = UserService()
+	private let highlightsService = HighlightsService()
 	
 	func getUsers(_ username: String, completion: @escaping (([User]) -> Void)) {
 		userService.getUsers(with: username) { (userJsonObject) in
@@ -33,6 +34,7 @@ class DataProvider {
 		}
 	}
 	
+	
 	func getFullsizeProfileImage(_ user: User, completion: @escaping (URL?) -> Void) {
 		userService.getFullSizeProfileImage(of: user, completion: completion)
 	}
@@ -46,5 +48,27 @@ class DataProvider {
 			completion(info)
 		}
 	}
+	
+	func getHighlightJsonModels(_ user: User, completion: @escaping (([HighlightJsonModel]) -> Void)) {
+		highlightsService.getHighlightJsonModels(of: user) { (jsonModels) in
+			guard let jsonModels = jsonModels else {
+				completion([])
+				return
+			}
+			completion(jsonModels)
+		}
+	}
+	
+	func getHighlights(_ user: User, highlightsJsonModel: HighlightJsonModel, completion: @escaping (([Highlight]) -> Void)) {
+		highlightsService.getHighlights(of: user, highlightJsonModel: highlightsJsonModel) { (highlights) in
+			guard let highlights = highlights else {
+				completion([])
+				return
+			}
+			completion(highlights)
+		}
+	}
+	
+	
 	
 }
