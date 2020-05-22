@@ -15,16 +15,16 @@ class HighlightsPreviewViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView!
 	private let dataProvider = DataProvider()
 	private let user: User
-	private var highlightJsonModels: [HighlightJsonModel] = []
+	private var highlightJsonModels: [HighlightHtmlModel] = []
 	
-	var onHighlightPreviewTapped: ((_ user: User, _ highlightJsonModel: HighlightJsonModel) -> Void)?
+	var onHighlightPreviewTapped: ((_ user: User, _ highlightJsonModel: HighlightHtmlModel) -> Void)?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		collectionView.dataSource = self
 		collectionView.delegate = self
 		collectionView.register(HighlightPreviewCollectionViewCell.nib, forCellWithReuseIdentifier: HighlightPreviewCollectionViewCell.name)
-		dataProvider.getHighlightJsonModels(user) { (highlightJsonModels) in
+		dataProvider.getHighlightHtmlModels(user) { (highlightJsonModels) in
 			self.highlightJsonModels = highlightJsonModels
 			self.collectionView.reloadSections(.init(integer: .zero))
 		}

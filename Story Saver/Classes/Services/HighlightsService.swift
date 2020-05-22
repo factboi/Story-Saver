@@ -12,24 +12,37 @@ import SwiftSoup
 import SwiftyJSON
 
 class HighlightsService {
-	func getHighlightJsonModels(of user: User, completion: @escaping ([HighlightJsonModel]?) -> Void) {
-		let baseUrlString = "https://api.storiesig.com/highlights/\(user.username)"
+	func getHighlightHtmlModels(of user: User, completion: @escaping ([HighlightHtmlModel]?) -> Void) {
+		let baseUrlString = "https://www.insta-stories.com/en/stories/\(user.username)"
 		guard let baseUrl = URL(string: baseUrlString) else {
 			completion(nil)
 			return
 		}
 		_ = Alamofire.request(baseUrl).responseString(completionHandler: { (response) in
-			let string = response.value ?? ""
-			let json = JSON(parseJSON: string)
-			let highlightsJsonArray = json["tray"].arrayValue
-			
-			let jsonDecoder = JSONDecoder()
-			let highlights = highlightsJsonArray.map { try? jsonDecoder.decode(HighlightJsonModel.self, from: try! $0.rawData()) }.compactMap({$0})
+			let htmlString = response.value ?? ""
+			let doc = try? SwiftSoup.parse(htmlString)
+			let thumbnails = try? doc?.getElementsByClass("highlight col-6 col-md-3 mb-4 mb-md-5").array()
+			var elements: [Element] = []
+			thumbnails?.forEach({ (element) in
+				if let aTag = try? element.getElementsByTag("a").first() {
+					elements.append(aTag)
+				}
+			})
+			var highlights: [HighlightHtmlModel] = []
+			elements.forEach { (element) in
+				let id = try? element.attr("href").components(separatedBy: "/").last
+				let imgUrlString = try? element.getElementsByTag("img").first()?.attr("src")
+				let title = try? element.getElementsByClass("highlight-description").text()
+				if let id = id, let imageUrlString = imgUrlString, let title = title {
+					let highlight = HighlightHtmlModel(id: id, title: title, imageUrlString: imageUrlString)
+					highlights.append(highlight)
+				}
+			}
 			completion(highlights)
 		})
 	}
 	
-	func getHighlights(of user: User, highlightJsonModel: HighlightJsonModel, completion: @escaping ([Highlight]?) -> Void) {
+	func getHighlights(of user: User, highlightJsonModel: HighlightHtmlModel, completion: @escaping ([Highlight]?) -> Void) {
 		guard let id  = highlightJsonModel.id.components(separatedBy: ":").last else {
 			completion(nil)
 			return

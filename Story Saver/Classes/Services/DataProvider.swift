@@ -49,8 +49,8 @@ class DataProvider {
 		}
 	}
 	
-	func getHighlightJsonModels(_ user: User, completion: @escaping (([HighlightJsonModel]) -> Void)) {
-		highlightsService.getHighlightJsonModels(of: user) { (jsonModels) in
+	func getHighlightHtmlModels(_ user: User, completion: @escaping (([HighlightHtmlModel]) -> Void)) {
+		highlightsService.getHighlightHtmlModels(of: user) { (jsonModels) in
 			guard let jsonModels = jsonModels else {
 				completion([])
 				return
@@ -59,7 +59,7 @@ class DataProvider {
 		}
 	}
 	
-	func getHighlights(_ user: User, highlightsJsonModel: HighlightJsonModel, completion: @escaping (([Highlight]) -> Void)) {
+	func getHighlights(_ user: User, highlightsJsonModel: HighlightHtmlModel, completion: @escaping (([Highlight]) -> Void)) {
 		highlightsService.getHighlights(of: user, highlightJsonModel: highlightsJsonModel) { (highlights) in
 			guard let highlights = highlights else {
 				completion([])

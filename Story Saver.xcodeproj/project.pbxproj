@@ -82,7 +82,6 @@
 		8A1E04692471993700F22984 /* StoryHeaderCollectionReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoryHeaderCollectionReusableView.xib; sourceTree = "<group>"; };
 		8A1E046C2471B0F900F22984 /* FullsizeImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageViewController.swift; sourceTree = "<group>"; };
 		8A1E046D2471B0F900F22984 /* FullsizeImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeImageViewController.xib; sourceTree = "<group>"; };
-		8A2B01CC247699EA006DD757 /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8A2B01CD24769B97006DD757 /* HighlightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsService.swift; sourceTree = "<group>"; };
 		8A2B01D12476AB5F006DD757 /* VideoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDownloadService.swift; sourceTree = "<group>"; };
 		8A2B01D32476B546006DD757 /* ImageDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
@@ -242,7 +241,6 @@
 			children = (
 				8A536D84246DB3D7004AC6B8 /* Classes */,
 				8A536D83246DB3AB004AC6B8 /* Resources */,
-				8A2B01CC247699EA006DD757 /* Test.playground */,
 			);
 			path = "Story Saver";
 			sourceTree = "<group>";

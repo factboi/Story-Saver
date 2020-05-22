@@ -19,8 +19,8 @@ class HighlightPreviewCollectionViewCell: UICollectionViewCell, NibLoadable {
 	}
 	@IBOutlet weak var imageView: UIImageView!
 	
-	public func set(_ highlightJsonModel: HighlightJsonModel) {
-		if let imageUrl = URL(string: highlightJsonModel.coverMedia.croppedImageVersion.url) {
+	public func set(_ highlightJsonModel: HighlightHtmlModel) {
+		if let imageUrl = URL(string: highlightJsonModel.imageUrlString) {
 			Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3)), into: imageView)
 		}
 		label.text = highlightJsonModel.title

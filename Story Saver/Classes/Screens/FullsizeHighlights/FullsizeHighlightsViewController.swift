@@ -13,7 +13,7 @@ class FullsizeHighlightsViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
 	
-	private let highlightJsonModel: HighlightJsonModel
+	private let highlightJsonModel: HighlightHtmlModel
 	private let dataProvider = DataProvider()
 	private var highlights: [Highlight] = []
 	private let user: User
@@ -55,7 +55,6 @@ class FullsizeHighlightsViewController: UIViewController {
 		}
 		alertController.addAction(cancelAction)
 		alertController.addAction(saveAction)
-		alertController.view.tintColor = .black
 		present(alertController, animated: true)
 	}
 	
@@ -116,7 +115,7 @@ class FullsizeHighlightsViewController: UIViewController {
 		}
 	}
 	
-	init(user: User, highlightJsonModel: HighlightJsonModel) {
+	init(user: User, highlightJsonModel: HighlightHtmlModel) {
 		self.highlightJsonModel = highlightJsonModel
 		self.user = user
 		super.init(nibName: nil, bundle: nil)
