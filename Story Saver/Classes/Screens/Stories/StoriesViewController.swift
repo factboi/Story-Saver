@@ -83,7 +83,6 @@ class StoriesViewController: UIViewController {
 		}
 		alertController.addAction(cancelAction)
 		alertController.addAction(saveAction)
-		alertController.view.tintColor = .black
 		self.present(alertController, animated: true)
 	}
 	

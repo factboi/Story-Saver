@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tro-Ur-FOP" firstAttribute="centerY" secondItem="M5X-zq-Qgc" secondAttribute="centerY" id="3T9-jz-fCG"/>
                             <constraint firstAttribute="width" secondItem="M5X-zq-Qgc" secondAttribute="height" multiplier="1:1" id="LfK-60-L00"/>

@@ -18,14 +18,13 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VAR-5n-f2W">
                         <rect key="frame" x="10" y="0.0" width="60" height="60"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="VAR-5n-f2W" secondAttribute="height" multiplier="1:1" id="AZX-pR-0t7"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ucl-Jg-Be4">
-                        <rect key="frame" x="0.0" y="60" width="80" height="16"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <rect key="frame" x="0.0" y="64" width="80" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -34,7 +33,7 @@
             <constraints>
                 <constraint firstItem="Ucl-Jg-Be4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0oH-YC-VV1"/>
                 <constraint firstItem="VAR-5n-f2W" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.75" id="1Fk-jP-dYp"/>
-                <constraint firstItem="Ucl-Jg-Be4" firstAttribute="top" secondItem="VAR-5n-f2W" secondAttribute="bottom" id="9hL-8c-LwY"/>
+                <constraint firstItem="Ucl-Jg-Be4" firstAttribute="top" secondItem="VAR-5n-f2W" secondAttribute="bottom" constant="4" id="9hL-8c-LwY"/>
                 <constraint firstItem="VAR-5n-f2W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="OZO-Lk-VOc"/>
                 <constraint firstItem="VAR-5n-f2W" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="V4v-Oh-G6k"/>
                 <constraint firstItem="Ucl-Jg-Be4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="nMf-aE-Fw5"/>

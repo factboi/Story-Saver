@@ -10,7 +10,6 @@
 		8A1CE0E224759402001ACAAA /* FullsizeImageStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E024759402001ACAAA /* FullsizeImageStoryViewController.swift */; };
 		8A1CE0E324759402001ACAAA /* FullsizeImageStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E124759402001ACAAA /* FullsizeImageStoryViewController.xib */; };
 		8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */; };
-		8A1CE0E72475A55B001ACAAA /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0E62475A55B001ACAAA /* Highlight.swift */; };
 		8A1CE0EC2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1CE0EA2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift */; };
 		8A1CE0ED2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1CE0EB2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib */; };
 		8A1E044E2471805800F22984 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 8A1E044D2471805800F22984 /* SwiftyJSON */; };
@@ -28,7 +27,6 @@
 		8A1E046E2471B0F900F22984 /* FullsizeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1E046C2471B0F900F22984 /* FullsizeImageViewController.swift */; };
 		8A1E046F2471B0F900F22984 /* FullsizeImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A1E046D2471B0F900F22984 /* FullsizeImageViewController.xib */; };
 		8A2B01CE24769B97006DD757 /* HighlightsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B01CD24769B97006DD757 /* HighlightsService.swift */; };
-		8A2B01D02476A307006DD757 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B01CF2476A307006DD757 /* Extension.swift */; };
 		8A2B01D22476AB5F006DD757 /* VideoDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B01D12476AB5F006DD757 /* VideoDownloadService.swift */; };
 		8A2B01D42476B546006DD757 /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2B01D32476B546006DD757 /* ImageDownloadService.swift */; };
 		8A2B01E12476BBD7006DD757 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A2B01DD2476BBD7006DD757 /* AlertViewController.xib */; };
@@ -49,7 +47,9 @@
 		8A536D79246DB390004AC6B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A536D78246DB390004AC6B8 /* Assets.xcassets */; };
 		8A536D7C246DB390004AC6B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8A536D7A246DB390004AC6B8 /* LaunchScreen.storyboard */; };
 		8A536D86246DB42D004AC6B8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A536D85246DB42D004AC6B8 /* ViewController.xib */; };
+		8A53FBE824783BEA0098A468 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A53FBE724783BEA0098A468 /* Highlight.swift */; };
 		8A69AB982472D89300A260BC /* UserDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69AB972472D89300A260BC /* UserDetailInfo.swift */; };
+		8AA57EA22478226000A1D874 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA57EA12478226000A1D874 /* Extension+UIImage.swift */; };
 		8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */; };
 		8AA971B0246F07F000A698C1 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */; };
 		8AA971B2246F095200A698C1 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971B1246F095200A698C1 /* NibLoadable.swift */; };
@@ -69,7 +69,6 @@
 		8A1CE0E024759402001ACAAA /* FullsizeImageStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullsizeImageStoryViewController.swift; sourceTree = "<group>"; };
 		8A1CE0E124759402001ACAAA /* FullsizeImageStoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeImageStoryViewController.xib; sourceTree = "<group>"; };
 		8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
-		8A1CE0E62475A55B001ACAAA /* Highlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		8A1CE0EA2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A1CE0EB2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightPreviewCollectionViewCell.xib; sourceTree = "<group>"; };
 		8A1E044F247180A000F22984 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
@@ -85,7 +84,6 @@
 		8A1E046D2471B0F900F22984 /* FullsizeImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeImageViewController.xib; sourceTree = "<group>"; };
 		8A2B01CC247699EA006DD757 /* Test.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Test.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		8A2B01CD24769B97006DD757 /* HighlightsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightsService.swift; sourceTree = "<group>"; };
-		8A2B01CF2476A307006DD757 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		8A2B01D12476AB5F006DD757 /* VideoDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDownloadService.swift; sourceTree = "<group>"; };
 		8A2B01D32476B546006DD757 /* ImageDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
 		8A2B01DD2476BBD7006DD757 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
@@ -108,7 +106,9 @@
 		8A536D7B246DB390004AC6B8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8A536D7D246DB390004AC6B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8A536D85246DB42D004AC6B8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		8A53FBE724783BEA0098A468 /* Highlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		8A69AB972472D89300A260BC /* UserDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInfo.swift; sourceTree = "<group>"; };
+		8AA57EA12478226000A1D874 /* Extension+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
 		8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		8AA971B1246F095200A698C1 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 			children = (
 				8AA971B3246F104100A698C1 /* Extension+UIView.swift */,
 				8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */,
-				8A2B01CF2476A307006DD757 /* Extension.swift */,
+				8AA57EA12478226000A1D874 /* Extension+UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,7 +357,6 @@
 				8AE706FB2470A93B00395BE7 /* User.swift */,
 				8A1E044F247180A000F22984 /* Story.swift */,
 				8A69AB972472D89300A260BC /* UserDetailInfo.swift */,
-				8A1CE0E62475A55B001ACAAA /* Highlight.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -379,6 +378,7 @@
 				8A2B01CD24769B97006DD757 /* HighlightsService.swift */,
 				8A2B01D12476AB5F006DD757 /* VideoDownloadService.swift */,
 				8A2B01D32476B546006DD757 /* ImageDownloadService.swift */,
+				8A53FBE724783BEA0098A468 /* Highlight.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -493,14 +493,13 @@
 				8A1E04542471816500F22984 /* DataProvider.swift in Sources */,
 				8A364EF82475F08100354359 /* FullsizeHighlightsViewController.swift in Sources */,
 				8A1E0465247198D700F22984 /* StoryCollectionViewCell.swift in Sources */,
+				8A53FBE824783BEA0098A468 /* Highlight.swift in Sources */,
 				8A2B01D22476AB5F006DD757 /* VideoDownloadService.swift in Sources */,
 				8AE706F62470A2C300395BE7 /* Router.swift in Sources */,
 				8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */,
 				8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */,
-				8A1CE0E72475A55B001ACAAA /* Highlight.swift in Sources */,
 				8AE706F92470A50500395BE7 /* SearchUserTableViewCell.swift in Sources */,
 				8A1CE0EC2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift in Sources */,
-				8A2B01D02476A307006DD757 /* Extension.swift in Sources */,
 				8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */,
 				8AE706FF2470AA7500395BE7 /* UserService.swift in Sources */,
 				8A1E0450247180A000F22984 /* Story.swift in Sources */,
@@ -509,6 +508,7 @@
 				8AA971C2246F18AC00A698C1 /* Feature.swift in Sources */,
 				8A1E04522471810600F22984 /* StoryService.swift in Sources */,
 				8AE706FC2470A93B00395BE7 /* User.swift in Sources */,
+				8AA57EA22478226000A1D874 /* Extension+UIImage.swift in Sources */,
 				8A1E046E2471B0F900F22984 /* FullsizeImageViewController.swift in Sources */,
 				8A364EF22475D99600354359 /* HighlightsPreviewViewController.swift in Sources */,
 				8AA971B2246F095200A698C1 /* NibLoadable.swift in Sources */,

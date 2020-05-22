@@ -10,6 +10,7 @@ import UIKit
 import Nuke
 
 class HighlightCollectionViewCell: UICollectionViewCell, NibLoadable {
+	
 	@IBOutlet weak var previewImageView: UIImageView!
 	@IBOutlet weak var highlightTypeImageView: UIImageView!
 	
@@ -26,20 +27,12 @@ class HighlightCollectionViewCell: UICollectionViewCell, NibLoadable {
 			guard let highlight = highlight else {
 				return
 			}
-			if let imageUrlString = highlight.imageUrlString {
-				highlightTypeImageView.image = #imageLiteral(resourceName: "image")
-				if let imageUrl = URL(string: imageUrlString) {
-					Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)),into: previewImageView)
-				}
-			} else if let videoUrlString = highlight.videoUrlString {
+			if highlight.imageUrlString == nil {
 				highlightTypeImageView.image = #imageLiteral(resourceName: "video")
-				let image = UIImage()
-				if let videoUrl = URL(string: videoUrlString) {
-					image.getThumbnailImageFromVideoUrl(url: videoUrl) { (image) in
-						UIView.transition(with: self.previewImageView, duration: 0.3, options: .transitionCrossDissolve, animations: {
-							self.previewImageView.image = image
-						})
-					}
+			} else {
+				highlightTypeImageView.image = #imageLiteral(resourceName: "image")
+				if let url = URL(string: highlight.imageUrlString ?? "") {
+					Nuke.loadImage(with: url, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)),into: previewImageView)					
 				}
 			}
 		}
@@ -47,6 +40,10 @@ class HighlightCollectionViewCell: UICollectionViewCell, NibLoadable {
 	
 	var onDownloadButtonClicked: ((_ highlight: Highlight) -> ())?
 	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		previewImageView.image = nil
+	}
 	
 	override func draw(_ rect: CGRect) {
 		super.draw(rect)

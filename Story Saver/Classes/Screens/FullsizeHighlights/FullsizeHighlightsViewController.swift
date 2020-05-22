@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 class FullsizeHighlightsViewController: UIViewController {
 	
@@ -139,7 +140,9 @@ extension FullsizeHighlightsViewController: UICollectionViewDataSource {
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HighlightCollectionViewCell.name, for: indexPath) as! HighlightCollectionViewCell
-		cell.highlight = highlights[indexPath.item]
+		let highlight = highlights[indexPath.item]
+		cell.highlight = highlight
+
 		cell.onDownloadButtonClicked = { [weak self] highlight in
 			self?.presentAlert(highlight)
 		}

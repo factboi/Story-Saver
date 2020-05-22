@@ -86,6 +86,7 @@ extension StoryHeaderCollectionReusableView {
 	fileprivate final class Decorator {
 		static func decorate(_ header: StoryHeaderCollectionReusableView) {
 			header.imageView.round()
+			header.expandButton.round()
 		}
 	}
 }
