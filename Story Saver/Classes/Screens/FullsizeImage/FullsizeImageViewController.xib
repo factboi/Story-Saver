@@ -9,8 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FullsizeImageViewController" customModule="Story_Saver" customModuleProvider="target">
             <connections>
-                <outlet property="imageView" destination="tCR-dr-sDq" id="76r-RQ-na3"/>
-                <outlet property="scrollView" destination="0hd-y5-LWc" id="BhY-Zd-RjG"/>
+                <outlet property="dismissButton" destination="dx1-jn-Vr6" id="ynE-aC-onl"/>
+                <outlet property="imageView" destination="IZC-Tz-FLQ" id="IGD-XA-LBO"/>
+                <outlet property="scrollView" destination="ASo-aT-hjl" id="b8z-w6-m42"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,44 +20,39 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hd-y5-LWc">
-                    <rect key="frame" x="0.0" y="90" width="414" height="772"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASo-aT-hjl">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tCR-dr-sDq">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="772"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IZC-Tz-FLQ">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         </imageView>
                     </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="tCR-dr-sDq" secondAttribute="trailing" id="C43-ip-O0U"/>
-                        <constraint firstItem="tCR-dr-sDq" firstAttribute="top" secondItem="0hd-y5-LWc" secondAttribute="top" id="K51-wY-ofU"/>
-                        <constraint firstItem="tCR-dr-sDq" firstAttribute="centerY" secondItem="0hd-y5-LWc" secondAttribute="centerY" id="SLC-fQ-7YR"/>
-                        <constraint firstAttribute="bottom" secondItem="tCR-dr-sDq" secondAttribute="bottom" id="WYM-hS-Drp"/>
-                        <constraint firstItem="tCR-dr-sDq" firstAttribute="leading" secondItem="0hd-y5-LWc" secondAttribute="leading" id="gb0-AV-zOy"/>
-                        <constraint firstItem="tCR-dr-sDq" firstAttribute="centerX" secondItem="0hd-y5-LWc" secondAttribute="centerX" id="qz2-U1-UMZ"/>
-                    </constraints>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PS4-um-gzR">
-                    <rect key="frame" x="344" y="44" width="54" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx1-jn-Vr6">
+                    <rect key="frame" x="378" y="48" width="32" height="32"/>
+                    <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="mWj-hC-pXR"/>
+                        <constraint firstAttribute="width" secondItem="dx1-jn-Vr6" secondAttribute="height" multiplier="1:1" id="9vr-kj-WwB"/>
+                        <constraint firstAttribute="width" constant="32" id="cov-t1-IaP"/>
                     </constraints>
-                    <state key="normal" title="Dismiss"/>
+                    <state key="normal" image="CloseIcon"/>
                     <connections>
-                        <action selector="dismissButtonClicked:" destination="-1" eventType="touchUpInside" id="0pz-Q9-4aG"/>
+                        <action selector="dismissButtonClicked:" destination="-1" eventType="touchUpInside" id="V6Y-YD-JJf"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="0hd-y5-LWc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="22G-JO-a8K"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0hd-y5-LWc" secondAttribute="bottom" id="Ngb-Sm-mM5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0hd-y5-LWc" secondAttribute="trailing" id="TrM-HL-vff"/>
-                <constraint firstItem="PS4-um-gzR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="URg-4F-WfA"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="PS4-um-gzR" secondAttribute="trailing" constant="16" id="d0P-Ga-Eaz"/>
-                <constraint firstItem="0hd-y5-LWc" firstAttribute="top" secondItem="PS4-um-gzR" secondAttribute="bottom" constant="16" id="sQ5-f2-Dk0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dx1-jn-Vr6" secondAttribute="trailing" constant="4" id="U0F-Jn-8ue"/>
+                <constraint firstItem="dx1-jn-Vr6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="XSR-gi-eaP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="44.927536231884062" y="110.49107142857143"/>
         </view>
     </objects>
+    <resources>
+        <image name="CloseIcon" width="17" height="17"/>
+    </resources>
 </document>

@@ -185,6 +185,7 @@ extension StoriesViewController: UICollectionViewDataSource {
 				self?.present(FullsizeImageViewController(user: user), animated: true)				
 			}
 		}
+		
 		if let info = userDetailInfo {
 			header.set(info, user: user)
 		}
@@ -199,7 +200,8 @@ extension StoriesViewController: UICollectionViewDataSource {
 extension StoriesViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let story = stories[indexPath.item]
-		story.video.isEmpty ? present(FullsizeImageStoryViewController(story: story), animated: true) : playVideoByUrl(story.video)
+		
+		story.video.isEmpty ? present(FullsizeImageStoryViewController(contentUrlString: story.preview), animated: true) : playVideoByUrl(story.video)
 	}
 }
 

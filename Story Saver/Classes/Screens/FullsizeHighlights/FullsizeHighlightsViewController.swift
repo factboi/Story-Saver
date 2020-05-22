@@ -145,8 +145,6 @@ extension FullsizeHighlightsViewController: UICollectionViewDataSource {
 		}
 		return cell
 	}
-	
-	
 }
 
 extension FullsizeHighlightsViewController: UICollectionViewDelegate {
@@ -155,7 +153,7 @@ extension FullsizeHighlightsViewController: UICollectionViewDelegate {
 		if let videoUrlString = highlight.videoUrlString {
 			playVideoByUrl(videoUrlString)
 		} else if let imageUrlString = highlight.imageUrlString {
-			print("\(imageUrlString)")
+			present(FullsizeImageStoryViewController(contentUrlString: imageUrlString), animated: true, completion: nil)
 		}
 	}
 }

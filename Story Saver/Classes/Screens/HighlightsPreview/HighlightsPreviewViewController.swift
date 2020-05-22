@@ -23,11 +23,9 @@ class HighlightsPreviewViewController: UIViewController {
 		super.viewDidLoad()
 		collectionView.dataSource = self
 		collectionView.delegate = self
-		collectionView.backgroundColor = .cyan
 		collectionView.register(HighlightPreviewCollectionViewCell.nib, forCellWithReuseIdentifier: HighlightPreviewCollectionViewCell.name)
 		dataProvider.getHighlightJsonModels(user) { (highlightJsonModels) in
 			self.highlightJsonModels = highlightJsonModels
-			print(self.highlightJsonModels)
 			self.collectionView.reloadSections(.init(integer: .zero))
 		}
 	}
@@ -67,7 +65,7 @@ extension HighlightsPreviewViewController: UICollectionViewDelegate {
 
 extension HighlightsPreviewViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		let height = collectionView.bounds.height
+		let height = collectionView.bounds.height * 0.9
 		return .init(width: height, height: height)
 	}
 }
