@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class HighlightsPreviewViewController: UIViewController {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
@@ -18,6 +16,7 @@ class HighlightsPreviewViewController: UIViewController {
 	private var highlightJsonModels: [HighlightHtmlModel] = []
 	
 	var onHighlightPreviewTapped: ((_ user: User, _ highlightJsonModel: HighlightHtmlModel) -> Void)?
+
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,9 +24,15 @@ class HighlightsPreviewViewController: UIViewController {
 		collectionView.delegate = self
 		collectionView.register(HighlightPreviewCollectionViewCell.nib, forCellWithReuseIdentifier: HighlightPreviewCollectionViewCell.name)
 		dataProvider.getHighlightHtmlModels(user) { (highlightJsonModels) in
+			print("get")
 			self.highlightJsonModels = highlightJsonModels
 			self.collectionView.reloadSections(.init(integer: .zero))
 		}
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		print(#function)
 	}
 	
 	
@@ -58,7 +63,6 @@ extension HighlightsPreviewViewController: UICollectionViewDataSource {
 
 extension HighlightsPreviewViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("selected")
 		onHighlightPreviewTapped?(user, highlightJsonModels[indexPath.item])
 	}
 }

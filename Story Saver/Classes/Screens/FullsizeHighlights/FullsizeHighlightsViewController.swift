@@ -32,6 +32,7 @@ class FullsizeHighlightsViewController: UIViewController {
 		collectionView.register(HighlightCollectionViewCell.nib, forCellWithReuseIdentifier: HighlightCollectionViewCell.name)
 		title = highlightJsonModel.title
 		dataProvider.getHighlights(user, highlightsJsonModel: highlightJsonModel) { (highlights) in
+			
 			self.highlights = highlights
 			self.collectionView.reloadSections(.init(integer: .zero))
 		}

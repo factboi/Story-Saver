@@ -12,23 +12,15 @@ import Nuke
 
 class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 	
-	var highlightsPreviewViewController: HighlightsPreviewViewController?
-	private var user: User? {
+	@IBOutlet weak var highlightsCollectionView: UICollectionView!
+	
+	private var user: User?
+	private var highlightsHtmlModels: [HighlightHtmlModel]? {
 		didSet {
-			guard let user = user else {return}
-			highlightsPreviewViewController = HighlightsPreviewViewController(user: user)
-			if let view = highlightsPreviewViewController?.view {
-				view.translatesAutoresizingMaskIntoConstraints = false
-				highlightsContainerView.addSubview(view)
-				view.topAnchor.constraint(equalTo: highlightsContainerView.topAnchor).isActive = true
-				view.bottomAnchor.constraint(equalTo: highlightsContainerView.bottomAnchor).isActive = true
-				view.leadingAnchor.constraint(equalTo: highlightsContainerView.leadingAnchor).isActive = true
-				view.trailingAnchor.constraint(equalTo: highlightsContainerView.trailingAnchor).isActive = true
-			}
+			highlightsCollectionView.reloadSections(.init(integer: .zero))
 		}
 	}
 	
-	@IBOutlet weak var highlightsContainerView: UIView!
 	@IBOutlet weak var expandButton: UIButton!
 	@IBOutlet weak var followingCountLabel: UILabel!
 	@IBOutlet weak var followersCountLabel: UILabel!
@@ -40,10 +32,12 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 		}
 	}
 	
+	var onHighlightPreviewTapped: ((_ user: User, _ highlightJsonModel: HighlightHtmlModel) -> Void)?
 	var onExpandButtonClicked: (() -> Void)?
 	
-	public func set(_ userInfo: UserDetailInfo, user: User) {
+	public func set(_ userInfo: UserDetailInfo, user: User, highlightsHtmlModels: [HighlightHtmlModel]) {
 		self.user = user
+		self.highlightsHtmlModels = highlightsHtmlModels
 		if let imageUrl = URL(string: userInfo.profilePicUrlHd) {
 			Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: imageView)
 		}
@@ -60,10 +54,18 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 	
 	
 	
+	fileprivate func delegating() {
+		highlightsCollectionView.delegate = self
+		highlightsCollectionView.dataSource = self
+	}
+	
+	
+	
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		subviews.forEach({$0.alpha = 0})
-		
+		delegating()
+		highlightsCollectionView.register(HighlightPreviewCollectionViewCell.nib, forCellWithReuseIdentifier: HighlightPreviewCollectionViewCell.name)
 	}
 	
 	@IBAction func expandButtonClicked(_ sender: UIButton) {
@@ -88,5 +90,34 @@ extension StoryHeaderCollectionReusableView {
 			header.imageView.round()
 			header.expandButton.round()
 		}
+	}
+}
+
+extension StoryHeaderCollectionReusableView: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+		if let highlightHtmlModel = highlightsHtmlModels?[indexPath.item], let user = user {
+			onHighlightPreviewTapped?(user, highlightHtmlModel)
+		}
+	}
+}
+
+extension StoryHeaderCollectionReusableView: UICollectionViewDataSource {
+	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		return highlightsHtmlModels?.count ?? 0
+	}
+	
+	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HighlightPreviewCollectionViewCell.name, for: indexPath) as! HighlightPreviewCollectionViewCell
+		if let highlightHtmlModel = highlightsHtmlModels?[indexPath.item] {
+			cell.set(highlightHtmlModel)
+		}
+		return cell
+	}
+}
+
+extension StoryHeaderCollectionReusableView: UICollectionViewDelegateFlowLayout {
+	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+		let height = collectionView.bounds.height * 0.9
+		return .init(width: height, height: height)
 	}
 }

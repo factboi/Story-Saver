@@ -10,12 +10,19 @@ import UIKit
 
 class StoriesViewController: UIViewController {
 	
+	private let headerViewMaxHeight: CGFloat = 350
+	private let headerViewMinHeight: CGFloat = 90
+	
+	@IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet private weak var collectionView: UICollectionView!
+	
 	
 	private var stories: [Story] = []
 	private let user: User
 	private let dataProvider = DataProvider()
 	private var userDetailInfo: UserDetailInfo?
+	private var highlightHtmlModels: [HighlightHtmlModel]?
+	private let refreshControl = UIRefreshControl()
 	private lazy var alertViewController = AlertViewController()
 	private lazy var progressViewController =  ProgressViewController()
 	private lazy var videoDownloadService: VideoDownloadService = {
@@ -28,10 +35,18 @@ class StoriesViewController: UIViewController {
 		super.viewDidLoad()
 		title = user.isVerified ? "\(user.username) ✅" : user.username
 		navigationItem.largeTitleDisplayMode = .never
+		refreshControl.addTarget(self, action: #selector(refresh(_:)), for: .valueChanged)
+		collectionView.refreshControl = refreshControl
 		delegating()
 		registerClasses()
 		getStories()
 		getUserDetailInfo()
+		getHighlightHtmlModels()
+	}
+	
+	@objc private func refresh(_ sender: UIRefreshControl) {
+		getStories()
+		sender.endRefreshing()
 	}
 	
 	private func getStories() {
@@ -39,6 +54,15 @@ class StoriesViewController: UIViewController {
 			dataProvider.getStories(user) { (stories) in
 				self.stories = stories
 				self.collectionView.reloadSections(IndexSet(integer: 0))
+			}
+		}
+	}
+	
+	private func getHighlightHtmlModels() {
+		if user.isPrivate {} else {
+			dataProvider.getHighlightHtmlModels(user) { (highlightHtmlModels) in
+				self.highlightHtmlModels = highlightHtmlModels
+				self.collectionView.reloadSections(.init(integer: .zero))
 			}
 		}
 	}
@@ -88,25 +112,25 @@ class StoriesViewController: UIViewController {
 	
 	private func handleImageSave(with url: URL) {
 		ImageDownloadService.shared.saveImage(url, completion: { (error) in
-				if error == nil {
-						self.alertViewController.state = State.success
+			if error == nil {
+				self.alertViewController.state = State.success
+				self.present(self.alertViewController, animated: true)
+			} else {
+				switch error {
+					case .accessDenied:
+						self.alertViewController.state = State.accessDenied
 						self.present(self.alertViewController, animated: true)
-				} else {
-						switch error {
-						case .accessDenied:
-								self.alertViewController.state = State.accessDenied
-								self.present(self.alertViewController, animated: true)
-						case .unknown:
-								self.alertViewController.state = State.unknown
-								self.present(self.alertViewController, animated: true)
-						case .none: break
-						}
+					case .unknown:
+						self.alertViewController.state = State.unknown
+						self.present(self.alertViewController, animated: true)
+					case .none: break
 				}
+			}
 		})
 	}
 	
 	private func handleVideoSave(with url: URL) {
-
+		
 		self.present(self.progressViewController, animated: true, completion: nil)
 		self.videoDownloadService.downloadAndSave(videoUrl: url) { (error) in
 			switch error {
@@ -128,7 +152,7 @@ class StoriesViewController: UIViewController {
 					self.alertViewController.state = State.accessDenied
 					DispatchQueue.main.async {
 						self.present(self.alertViewController, animated: true)
-					}
+				}
 				case .unknown:
 					DispatchQueue.main.async {
 						self.progressViewController.dismiss(animated: true) {
@@ -156,7 +180,6 @@ class StoriesViewController: UIViewController {
 
 extension StoriesViewController: VideoDownloadServiceDelegate {
 	func progressDidChanged(_ progress: CGFloat) {
-		print(progress)
 		progressViewController.progress = progress
 	}
 }
@@ -181,15 +204,16 @@ extension StoriesViewController: UICollectionViewDataSource {
 		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StoryHeaderCollectionReusableView.name, for: indexPath) as! StoryHeaderCollectionReusableView
 		header.onExpandButtonClicked = { [weak self] in
 			if let user = self?.user {
-				self?.present(FullsizeImageViewController(user: user), animated: true)				
+				self?.present(FullsizeImageViewController(user: user), animated: true)
 			}
 		}
-		
-		if let info = userDetailInfo {
-			header.set(info, user: user)
+
+		header.onHighlightPreviewTapped = { [weak self] user, highlightHtmlModel in
+			self?.navigationController?.pushViewController(FullsizeHighlightsViewController(user: user, highlightJsonModel: highlightHtmlModel), animated: true)
 		}
-		header.highlightsPreviewViewController?.onHighlightPreviewTapped = { [weak self] (user, highlightJsonModel) in
-			self?.navigationController?.pushViewController(FullsizeHighlightsViewController(user: user, highlightJsonModel: highlightJsonModel), animated: true)
+		
+		if let info = userDetailInfo, let highlightsHtmlModels = highlightHtmlModels {
+			header.set(info, user: user, highlightsHtmlModels: highlightsHtmlModels)
 		}
 		
 		return header
@@ -199,7 +223,7 @@ extension StoriesViewController: UICollectionViewDataSource {
 extension StoriesViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let story = stories[indexPath.item]
-		
+
 		story.video.isEmpty ? present(FullsizeImageStoryViewController(contentUrlString: story.preview), animated: true) : playVideoByUrl(story.video)
 	}
 }

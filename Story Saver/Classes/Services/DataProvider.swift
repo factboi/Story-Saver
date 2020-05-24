@@ -50,12 +50,12 @@ class DataProvider {
 	}
 	
 	func getHighlightHtmlModels(_ user: User, completion: @escaping (([HighlightHtmlModel]) -> Void)) {
-		highlightsService.getHighlightHtmlModels(of: user) { (jsonModels) in
-			guard let jsonModels = jsonModels else {
+		highlightsService.getHighlightHtmlModels(of: user) { (htmlModels) in
+			guard let htmlModels = htmlModels else {
 				completion([])
 				return
 			}
-			completion(jsonModels)
+			completion(htmlModels)
 		}
 	}
 	

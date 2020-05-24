@@ -74,7 +74,6 @@ extension ViewController: UISearchBarDelegate {
 		users.removeAll()
 		self.tableView.reloadSections([0], with: .fade)
 	}
-	
 }
 
 extension ViewController: UITableViewDataSource {

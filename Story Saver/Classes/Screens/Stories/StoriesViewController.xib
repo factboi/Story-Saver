@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="N3E-uT-15Y">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="4" id="GVl-dg-H4U">
                         <size key="itemSize" width="128" height="128"/>
@@ -31,13 +31,13 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N3E-uT-15Y" secondAttribute="bottom" id="CLq-74-fwO"/>
-                <constraint firstItem="N3E-uT-15Y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cfI-6r-Ve3"/>
-                <constraint firstItem="N3E-uT-15Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dXg-kb-CfT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N3E-uT-15Y" secondAttribute="trailing" id="h7J-5l-rsL"/>
+                <constraint firstAttribute="bottom" secondItem="N3E-uT-15Y" secondAttribute="bottom" id="E7J-wD-6G8"/>
+                <constraint firstItem="N3E-uT-15Y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ME0-dH-MvG"/>
+                <constraint firstItem="N3E-uT-15Y" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="d5R-bc-2RT"/>
+                <constraint firstItem="N3E-uT-15Y" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="wmd-eB-rTA"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="132" y="106"/>
+            <point key="canvasLocation" x="131.8840579710145" y="105.80357142857143"/>
         </view>
     </objects>
 </document>

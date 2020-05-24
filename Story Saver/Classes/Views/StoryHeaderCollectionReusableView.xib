@@ -92,27 +92,31 @@
                         </stackView>
                     </subviews>
                 </stackView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzP-DK-nzT">
-                    <rect key="frame" x="0.0" y="209.5" width="320" height="90"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9CU-iC-Fdc">
+                    <rect key="frame" x="0.0" y="201.5" width="320" height="98.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="90" id="lUo-R1-6Jj"/>
-                    </constraints>
-                </view>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZRa-Gp-MmF">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="bTD-UV-ylE" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="1je-2u-VDe"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="9CU-iC-Fdc" secondAttribute="trailing" id="1tZ-Mf-bpK"/>
+                <constraint firstItem="9CU-iC-Fdc" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="2TQ-XI-cwb"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="OGm-oG-yr3" secondAttribute="trailing" constant="16" id="AQD-fe-8E7"/>
                 <constraint firstItem="RMm-zY-Ozy" firstAttribute="top" secondItem="OGm-oG-yr3" secondAttribute="bottom" constant="8" id="C4o-D9-NhB"/>
-                <constraint firstItem="IzP-DK-nzT" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="C6Y-Dy-voH"/>
+                <constraint firstItem="9CU-iC-Fdc" firstAttribute="top" secondItem="RMm-zY-Ozy" secondAttribute="bottom" constant="8" id="FdK-Ng-HME"/>
                 <constraint firstItem="bTD-UV-ylE" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="8" id="KPp-xb-kL3"/>
                 <constraint firstItem="OGm-oG-yr3" firstAttribute="top" secondItem="bTD-UV-ylE" secondAttribute="bottom" constant="8" id="P8Y-6P-VuR"/>
+                <constraint firstAttribute="bottom" secondItem="9CU-iC-Fdc" secondAttribute="bottom" id="bem-RT-USy"/>
                 <constraint firstItem="RMm-zY-Ozy" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="16" id="cEH-71-jEx"/>
-                <constraint firstItem="IzP-DK-nzT" firstAttribute="trailing" secondItem="VXr-Tz-HHm" secondAttribute="trailing" id="ieL-ny-VXM"/>
                 <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="RMm-zY-Ozy" secondAttribute="trailing" constant="16" id="sgR-zg-0xb"/>
                 <constraint firstItem="OGm-oG-yr3" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="16" id="w5i-4A-OQo"/>
-                <constraint firstItem="IzP-DK-nzT" firstAttribute="top" secondItem="RMm-zY-Ozy" secondAttribute="bottom" constant="16" id="zDY-2h-b5G"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
             <connections>
@@ -120,7 +124,7 @@
                 <outlet property="followersCountLabel" destination="Z8G-5p-KUb" id="x2P-fG-OkU"/>
                 <outlet property="followingCountLabel" destination="8fn-KZ-cv7" id="HxM-3B-Eml"/>
                 <outlet property="fullNameLabel" destination="OGm-oG-yr3" id="03d-Ab-dek"/>
-                <outlet property="highlightsContainerView" destination="IzP-DK-nzT" id="GUx-OU-l3V"/>
+                <outlet property="highlightsCollectionView" destination="9CU-iC-Fdc" id="x03-mo-rfb"/>
                 <outlet property="imageView" destination="NTm-cS-Qf0" id="rgW-iv-kYc"/>
             </connections>
             <point key="canvasLocation" x="44.927536231884062" y="184.15178571428569"/>

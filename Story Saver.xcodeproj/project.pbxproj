@@ -271,6 +271,24 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		8AB1D1C1247993980096E1F5 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				8A2B01E02476BBD7006DD757 /* AlertViewController.swift */,
+				8A2B01DD2476BBD7006DD757 /* AlertViewController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		8AB1D1C2247993A00096E1F5 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				8A2B01DF2476BBD7006DD757 /* ProgressViewController.swift */,
+				8A2B01DE2476BBD7006DD757 /* ProgressViewController.xib */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
 		8AE706EC2470A1AE00395BE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,10 +302,8 @@
 		8AE706ED2470A1B100395BE7 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				8A2B01E02476BBD7006DD757 /* AlertViewController.swift */,
-				8A2B01DD2476BBD7006DD757 /* AlertViewController.xib */,
-				8A2B01DF2476BBD7006DD757 /* ProgressViewController.swift */,
-				8A2B01DE2476BBD7006DD757 /* ProgressViewController.xib */,
+				8AB1D1C1247993980096E1F5 /* Alert */,
+				8AB1D1C2247993A00096E1F5 /* Progress */,
 				8A2C2DB82474113F007AC333 /* FullsizeStories */,
 				8AE706EF2470A1C200395BE7 /* ViewController */,
 				8AE706EE2470A1B800395BE7 /* Onboarding */,
@@ -351,6 +367,7 @@
 		8AE706F32470A20D00395BE7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8A53FBE724783BEA0098A468 /* Highlight.swift */,
 				8AA971C1246F18AC00A698C1 /* Feature.swift */,
 				8AE706FB2470A93B00395BE7 /* User.swift */,
 				8A1E044F247180A000F22984 /* Story.swift */,
@@ -376,7 +393,6 @@
 				8A2B01CD24769B97006DD757 /* HighlightsService.swift */,
 				8A2B01D12476AB5F006DD757 /* VideoDownloadService.swift */,
 				8A2B01D32476B546006DD757 /* ImageDownloadService.swift */,
-				8A53FBE724783BEA0098A468 /* Highlight.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -580,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -634,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

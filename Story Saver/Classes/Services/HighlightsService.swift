@@ -52,7 +52,6 @@ class HighlightsService {
 			completion(nil)
 			return
 		}
-		print(baseUrl)
 		
 		_ = Alamofire.request(baseUrl).responseString(completionHandler: { (response) in
 			let htmlString = response.value ?? ""
@@ -70,7 +69,6 @@ class HighlightsService {
 					highlightsArray.append(story)
 				}
 			})
-			print(highlightsArray)
 			completion(highlightsArray)
 		})
 	}
