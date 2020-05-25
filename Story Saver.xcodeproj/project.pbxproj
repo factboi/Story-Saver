@@ -39,6 +39,9 @@
 		8A364EF92475F08100354359 /* FullsizeHighlightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A364EF72475F08100354359 /* FullsizeHighlightsViewController.xib */; };
 		8A364EFE2475F1BA00354359 /* HighlightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A364EFC2475F1BA00354359 /* HighlightCollectionViewCell.swift */; };
 		8A364EFF2475F1BA00354359 /* HighlightCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A364EFD2475F1BA00354359 /* HighlightCollectionViewCell.xib */; };
+		8A4F29F4247C1B740081948B /* BouncyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F29F3247C1B740081948B /* BouncyView.swift */; };
+		8A4F29F6247C1BB10081948B /* Extension+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F29F5247C1BB10081948B /* Extension+UITableView.swift */; };
+		8A4F29F8247C20E20081948B /* Extension+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4F29F7247C20E20081948B /* Extension+UICollectionView.swift */; };
 		8A51D1F1246DDBB3001388A4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */; };
 		8A51D1F2246DDBB3001388A4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */; };
 		8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A536D6F246DB38F004AC6B8 /* AppDelegate.swift */; };
@@ -95,6 +98,9 @@
 		8A364EF72475F08100354359 /* FullsizeHighlightsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullsizeHighlightsViewController.xib; sourceTree = "<group>"; };
 		8A364EFC2475F1BA00354359 /* HighlightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightCollectionViewCell.swift; sourceTree = "<group>"; };
 		8A364EFD2475F1BA00354359 /* HighlightCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HighlightCollectionViewCell.xib; sourceTree = "<group>"; };
+		8A4F29F3247C1B740081948B /* BouncyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BouncyView.swift; sourceTree = "<group>"; };
+		8A4F29F5247C1BB10081948B /* Extension+UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UITableView.swift"; sourceTree = "<group>"; };
+		8A4F29F7247C20E20081948B /* Extension+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UICollectionView.swift"; sourceTree = "<group>"; };
 		8A51D1EF246DDBB3001388A4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		8A51D1F0246DDBB3001388A4 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		8A536D6C246DB38F004AC6B8 /* Story Saver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Story Saver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -292,6 +298,7 @@
 		8AE706EC2470A1AE00395BE7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8A4F29F3247C1B740081948B /* BouncyView.swift */,
 				8AE706F02470A1D000395BE7 /* Cells */,
 				8A1E04682471993700F22984 /* StoryHeaderCollectionReusableView.swift */,
 				8A1E04692471993700F22984 /* StoryHeaderCollectionReusableView.xib */,
@@ -360,6 +367,8 @@
 				8AA971B3246F104100A698C1 /* Extension+UIView.swift */,
 				8A1CE0E424759BB4001ACAAA /* Extension+UIViewController.swift */,
 				8AA57EA12478226000A1D874 /* Extension+UIImage.swift */,
+				8A4F29F5247C1BB10081948B /* Extension+UITableView.swift */,
+				8A4F29F7247C20E20081948B /* Extension+UICollectionView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,6 +511,7 @@
 				8A536D74246DB38F004AC6B8 /* ViewController.swift in Sources */,
 				8A2B01E32476BBD7006DD757 /* ProgressViewController.swift in Sources */,
 				8A1E04602471938200F22984 /* StoriesViewController.swift in Sources */,
+				8A4F29F6247C1BB10081948B /* Extension+UITableView.swift in Sources */,
 				8A69AB982472D89300A260BC /* UserDetailInfo.swift in Sources */,
 				8A2B01E42476BBD7006DD757 /* AlertViewController.swift in Sources */,
 				8A1E04542471816500F22984 /* DataProvider.swift in Sources */,
@@ -510,9 +520,11 @@
 				8A53FBE824783BEA0098A468 /* Highlight.swift in Sources */,
 				8A2B01D22476AB5F006DD757 /* VideoDownloadService.swift in Sources */,
 				8AE706F62470A2C300395BE7 /* Router.swift in Sources */,
+				8A4F29F8247C20E20081948B /* Extension+UICollectionView.swift in Sources */,
 				8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */,
 				8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */,
 				8AE706F92470A50500395BE7 /* SearchUserTableViewCell.swift in Sources */,
+				8A4F29F4247C1B740081948B /* BouncyView.swift in Sources */,
 				8A1CE0EC2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift in Sources */,
 				8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */,
 				8AE706FF2470AA7500395BE7 /* UserService.swift in Sources */,

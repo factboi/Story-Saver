@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 	
 	@IBOutlet private weak var tableView: UITableView! {
 		didSet {
+			tableView.setEmptyView(emoji: "🌄", message: "Search Over Instagram Users")
 			tableView.tableFooterView = UIView()
 		}
 	}
@@ -60,9 +61,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+		tableView.restore()
 		users.removeAll()
 		if let username = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
 			dataProvider.getUsers(username) { (users) in
+				users.isEmpty ? self.tableView.setEmptyView(emoji: "😭", message: "No Such Users") : self.tableView.restore()
 				self.users = users
 				self.tableView.reloadSections([0], with: .fade)
 			}
@@ -72,7 +75,8 @@ extension ViewController: UISearchBarDelegate {
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		users.removeAll()
-		self.tableView.reloadSections([0], with: .fade)
+		tableView.setEmptyView(emoji: "🌄", message: "Search Over Instagram Users")
+		tableView.reloadSections([0], with: .fade)
 	}
 }
 

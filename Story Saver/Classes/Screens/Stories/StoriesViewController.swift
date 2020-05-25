@@ -10,12 +10,7 @@ import UIKit
 
 class StoriesViewController: UIViewController {
 	
-	private let headerViewMaxHeight: CGFloat = 350
-	private let headerViewMinHeight: CGFloat = 90
-	
-	@IBOutlet weak var headerViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet private weak var collectionView: UICollectionView!
-	
 	
 	private var stories: [Story] = []
 	private let user: User
@@ -50,8 +45,11 @@ class StoriesViewController: UIViewController {
 	}
 	
 	private func getStories() {
-		if user.isPrivate {} else {
+		if user.isPrivate {
+			collectionView.setEmptyViewWithAnimation(emoji: "😭", message: "User Is Private")
+		} else {
 			dataProvider.getStories(user) { (stories) in
+				stories.isEmpty ? self.collectionView.setEmptyViewWithAnimation(emoji: "😭", message: "No Stories") : self.collectionView.restore()
 				self.stories = stories
 				self.collectionView.reloadSections(IndexSet(integer: 0))
 			}

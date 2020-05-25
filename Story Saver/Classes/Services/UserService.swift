@@ -37,26 +37,26 @@ class UserService {
 		}
 		
 		_ = Alamofire.request(url).responseString(completionHandler: { (response) in
-			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-				let string = response.value ?? ""
-				let document = try? SwiftSoup.parse(string)
-				let pictureClass = try? document?.getElementsByClass("download-btn").first()
-				guard let source = try? pictureClass?.attr("href") else {
-					completion(nil)
-					return
-				}
-				
-				guard !source.isEmpty else {
-					completion(nil)
-					return
-				}
-				
-				guard let url = URL(string: source) else {
-					completion(nil)
-					return
-				}
-				completion(url)
+			
+			let string = response.value ?? ""
+			let document = try? SwiftSoup.parse(string)
+			let pictureClass = try? document?.getElementsByClass("download-btn").first()
+			guard let source = try? pictureClass?.attr("href") else {
+				completion(nil)
+				return
 			}
+			
+			guard !source.isEmpty else {
+				completion(nil)
+				return
+			}
+			
+			guard let url = URL(string: source) else {
+				completion(nil)
+				return
+			}
+			completion(url)
+			
 		})
 	}
 	

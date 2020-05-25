@@ -41,6 +41,7 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 		if let imageUrl = URL(string: userInfo.profilePicUrlHd) {
 			Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: imageView)
 		}
+		highlightsHtmlModels.isEmpty ? highlightsCollectionView.setEmptyViewWithMessage("No Highlights") : highlightsCollectionView.restore()
 		fullNameLabel.text = userInfo.fullName
 		followersCountLabel.text = "\(userInfo.followersCount.count)"
 		followingCountLabel.text = "\(userInfo.followingCount.count)"

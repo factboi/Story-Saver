@@ -35,7 +35,6 @@ class SearchUserTableViewCell: UITableViewCell, NibLoadable {
 extension SearchUserTableViewCell {
 	fileprivate final class Decorator {
 		static func decorate(_ cell: SearchUserTableViewCell) {
-			
 			cell.profileImageView.round()
 		}
 	}
