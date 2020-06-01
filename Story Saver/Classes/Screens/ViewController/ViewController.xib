@@ -18,15 +18,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cFb-eh-b53">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cFb-eh-b53">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cFb-eh-b53" secondAttribute="trailing" id="RKV-Ld-5GO"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="cFb-eh-b53" secondAttribute="bottom" id="dC8-iy-9BW"/>
+                <constraint firstAttribute="bottom" secondItem="cFb-eh-b53" secondAttribute="bottom" id="dC8-iy-9BW"/>
                 <constraint firstItem="cFb-eh-b53" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mnP-zz-Zi4"/>
                 <constraint firstItem="cFb-eh-b53" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pKH-7o-nmM"/>
             </constraints>

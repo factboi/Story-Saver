@@ -11,16 +11,18 @@ import UIKit
 extension UICollectionView {
 	
 	func setEmptyViewWithAnimation(emoji: String, message: String) {
-		let bouncyView = BouncyView(frame: CGRect(x: center.x, y: center.y, width: bounds.size.width, height: bounds.size.height))
+		let emptyView = UIView(frame: bounds)
+		let bouncyView = BouncyView(frame: CGRect(x: .zero, y: 300, width: bounds.width, height: bounds.height - 300))
+		emptyView.addSubview(bouncyView)
 		bouncyView.configure(emoji: emoji, message: message)
-		backgroundView = bouncyView
+		backgroundView = emptyView
 	}
 	
 	func setEmptyViewWithMessage(_ message: String) {
 		let titleLabel = UILabel(frame: CGRect(x: center.x, y: center.y, width: bounds.size.width, height: bounds.size.height))
 		titleLabel.text = message
 		titleLabel.textAlignment = .center
-		titleLabel.textColor = .label
+		titleLabel.textColor = .black
 		titleLabel.font = .boldSystemFont(ofSize: 18)
 		backgroundView = titleLabel
 	}

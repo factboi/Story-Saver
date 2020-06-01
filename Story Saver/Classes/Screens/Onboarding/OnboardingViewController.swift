@@ -10,80 +10,71 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
 	
-	@IBOutlet private weak var collectionView: UICollectionView!
-	@IBOutlet private weak var pageControl: UIPageControl!
-	@IBOutlet private weak var nextButton: UIButton!
+	@IBOutlet weak var nextButton: UIButton!
 	
-	private let features: [Feature] = [
-		Feature(image: #imageLiteral(resourceName: "anonymity"), heading: "Keep It Secret.", subheading: "View the stories of a user anonymously."),
-		Feature(image: #imageLiteral(resourceName: "arrows"), heading: "Instagram Stories Download", subheading: "Save the stories of your favorite users before they are deleted."),
-		Feature(image: #imageLiteral(resourceName: "thumb"), heading: "Save your favourite profiles.", subheading: "Create your own list of profile you want to follow outside the Instagram."),
-	]
+	@IBOutlet var descriptionStackViews: [UIStackView]! {
+		didSet {
+			descriptionStackViews.forEach { (stackView) in
+				stackView.subviews.forEach { (label) in
+					if let label = label as? UILabel {
+						label.adjustsFontSizeToFitWidth = true
+					}
+				}
+			}
+		}
+	}
 	
-	override func viewDidLoad() {	
+	var onNextButtonClicked: (() -> ())?
+	
+	@IBOutlet weak var whatsNewLabel: UILabel! {
+		didSet {
+			whatsNewLabel.adjustsFontSizeToFitWidth = true
+		}
+	}
+	@IBOutlet weak var containerStackView: UIStackView!
+	@IBAction func nextButtonClicked(_ sender: UIButton) {
+		onNextButtonClicked?()
+	}
+	
+
+	
+	override func viewDidLoad() {
 		super.viewDidLoad()
-		delegating()
-		registerCells()
-		addTargets()
+		containerStackView.subviews.forEach { (view) in
+			view.transform = .init(translationX: view.frame.maxX + 100, y: 0)
+		}
+		
 	}
 	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
-		pageControl.numberOfPages = features.count
+		Decorator.decorate(self)
 	}
 	
-	private func registerCells() {
-		collectionView.register(OnboardingCollectionViewCell.nib, forCellWithReuseIdentifier: OnboardingCollectionViewCell.name)
-		collectionView.register(PurchaseCollectionViewCell.nib, forCellWithReuseIdentifier: PurchaseCollectionViewCell.name)
-	}
-	
-	private func delegating() {
-		collectionView.dataSource = self
-		collectionView.delegate = self
-	}
-	
-	private func addTargets() {
-		nextButton.addTarget(self, action: #selector(nextButtonClicked(_:)), for: .touchUpInside)
-	}
-	
-	@objc private func nextButtonClicked(_ sender: UIButton) {
-	}
-	
-}
-
-
-
-extension OnboardingViewController: UICollectionViewDataSource {
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return features.count + 1
-	}
-	
-	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		
-		if indexPath.item == features.count {
-			let purchaseCell = collectionView.dequeueReusableCell(withReuseIdentifier: PurchaseCollectionViewCell.name, for: indexPath)
-			return purchaseCell
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		var delay = 0.5
+		containerStackView.subviews.forEach { (view) in
+			UIView.animate(withDuration: 1, delay: delay, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
+				view.transform = .identity
+			})
+			delay += 0.2
 		}
+		navigationController?.setNavigationBarHidden(true, animated: false)
 		
-		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.name, for: indexPath) as! OnboardingCollectionViewCell
-		cell.feature = features[indexPath.item]
-		return cell
 	}
+	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		
+	}
+	
 }
 
-extension OnboardingViewController: UICollectionViewDelegate {
-	func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-		pageControl.currentPage = indexPath.item
-		if indexPath.item == features.count {
-			pageControl.alpha = 0
-		} else {
-			pageControl.alpha = 1
+extension OnboardingViewController {
+	fileprivate final class Decorator {
+		static func decorate(_ vc: OnboardingViewController) {
+			vc.nextButton.round(value: 8)
 		}
-	}
-}
-
-extension OnboardingViewController: UICollectionViewDelegateFlowLayout {
-	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-		return collectionView.bounds.size
 	}
 }

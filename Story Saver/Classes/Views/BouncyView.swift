@@ -1,14 +1,4 @@
-//
-//  BouncyView.swift
-//  Papr
-//
-//  Created by Joan Disho on 22.07.18.
-//  Copyright © 2018 Joan Disho. All rights reserved.
-//
-
 import UIKit
-
-// https://github.com/GitHawkApp/GitHawk/blob/212529d4661d4245586147a9934b603b9e367ea6/Classes/Notifications/NoNewNotificationsCell.swift
 
 class BouncyView: UIView {
 	
@@ -35,7 +25,7 @@ class BouncyView: UIView {
 		messageLabel.textAlignment = .center
 		messageLabel.backgroundColor = .clear
 		messageLabel.font = .boldSystemFont(ofSize: 17)
-		messageLabel.textColor = .label
+		messageLabel.textColor = .black
 		messageLabel.translatesAutoresizingMaskIntoConstraints = false
 		addSubview(messageLabel)
 		messageLabel.centerXAnchor.constraint(equalTo: emojiLabel.centerXAnchor).isActive = true

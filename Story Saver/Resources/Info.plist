@@ -56,10 +56,5 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>awdawd</string>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
 </dict>
 </plist>

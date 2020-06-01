@@ -10,8 +10,20 @@ import Alamofire
 import SwiftyJSON
 import Foundation
 import SwiftSoup
+import WebKit
 
-class UserService {
+
+class UserService: NSObject {
+	
+	private let webView = WKWebView()
+	
+	private var imageCompletion: ((_ imageUrlString: String?) -> Void)?
+	
+	override init() {
+		super.init()
+		self.webView.navigationDelegate = self
+	}
+	
 	func getUsers(with profileName: String, completion: @escaping ([UserJsonObject]?) -> Void) {
 		let baseUrlString = "https://i.instagram.com/web/search/topsearch/?query=\(profileName)"
 		guard let baseUrl = URL(string: baseUrlString) else {
@@ -35,29 +47,19 @@ class UserService {
 			completion(nil)
 			return
 		}
-		
-		_ = Alamofire.request(url).responseString(completionHandler: { (response) in
-			
-			let string = response.value ?? ""
-			let document = try? SwiftSoup.parse(string)
-			let pictureClass = try? document?.getElementsByClass("download-btn").first()
-			guard let source = try? pictureClass?.attr("href") else {
+		webView.load(URLRequest(url: url))
+		imageCompletion = { imageUrlString in
+			guard let imageUrlString = imageUrlString else {
 				completion(nil)
 				return
 			}
-			
-			guard !source.isEmpty else {
+			guard let imageUrl = URL(string: imageUrlString) else {
 				completion(nil)
 				return
 			}
-			
-			guard let url = URL(string: source) else {
-				completion(nil)
-				return
-			}
-			completion(url)
-			
-		})
+			print(imageUrl)
+			completion(imageUrl)
+		}
 	}
 	
 	func getDetailedUserInfo(_ user: User, completion: @escaping (UserDetailInfo?) -> Void) {
@@ -80,4 +82,20 @@ class UserService {
 	
 }
 
-
+extension UserService: WKNavigationDelegate {
+	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+			webView.evaluateJavaScript("document.getElementsByClassName('download-btn')[0].toString()") { (html, error) in
+				guard error == nil else {
+					self.imageCompletion?(nil)
+					return
+				}
+				guard let imageUrlString = html as? String else {
+					self.imageCompletion?(nil)
+					return
+				}
+				self.imageCompletion?(imageUrlString)
+			}			
+		}
+	}
+}

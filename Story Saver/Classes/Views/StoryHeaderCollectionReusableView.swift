@@ -35,25 +35,24 @@ class StoryHeaderCollectionReusableView: UICollectionReusableView, NibLoadable {
 	var onHighlightPreviewTapped: ((_ user: User, _ highlightJsonModel: HighlightHtmlModel) -> Void)?
 	var onExpandButtonClicked: (() -> Void)?
 	
-	public func set(_ userInfo: UserDetailInfo, user: User, highlightsHtmlModels: [HighlightHtmlModel]) {
+	public func set(_ userInfo: UserDetailInfo?, user: User, highlightsHtmlModels: [HighlightHtmlModel]) {
 		self.user = user
 		self.highlightsHtmlModels = highlightsHtmlModels
-		if let imageUrl = URL(string: userInfo.profilePicUrlHd) {
-			Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: imageView)
+		if let userInfo = userInfo {
+			if let imageUrl = URL(string: userInfo.profilePicUrlHd) {
+				Nuke.loadImage(with: imageUrl, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: imageView)
+			}
+			fullNameLabel.text = userInfo.fullName
+			followersCountLabel.text = "\(userInfo.followersCount.count)"
+			followingCountLabel.text = "\(userInfo.followingCount.count)"
 		}
 		highlightsHtmlModels.isEmpty ? highlightsCollectionView.setEmptyViewWithMessage("No Highlights") : highlightsCollectionView.restore()
-		fullNameLabel.text = userInfo.fullName
-		followersCountLabel.text = "\(userInfo.followersCount.count)"
-		followingCountLabel.text = "\(userInfo.followingCount.count)"
 		subviews.forEach { (view) in
 			UIView.animate(withDuration: 0.3) {
 				view.alpha = 1
 			}
 		}
 	}
-	
-	
-	
 	
 	fileprivate func delegating() {
 		highlightsCollectionView.delegate = self

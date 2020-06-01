@@ -52,14 +52,14 @@
 		8A536D86246DB42D004AC6B8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8A536D85246DB42D004AC6B8 /* ViewController.xib */; };
 		8A53FBE824783BEA0098A468 /* Highlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A53FBE724783BEA0098A468 /* Highlight.swift */; };
 		8A69AB982472D89300A260BC /* UserDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A69AB972472D89300A260BC /* UserDetailInfo.swift */; };
+		8AA4CBC62481184D00E43718 /* FeaturesPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA4CBC52481184D00E43718 /* FeaturesPageViewController.swift */; };
 		8AA57EA22478226000A1D874 /* Extension+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA57EA12478226000A1D874 /* Extension+UIImage.swift */; };
-		8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */; };
-		8AA971B0246F07F000A698C1 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */; };
 		8AA971B2246F095200A698C1 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971B1246F095200A698C1 /* NibLoadable.swift */; };
 		8AA971B4246F104100A698C1 /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971B3246F104100A698C1 /* Extension+UIView.swift */; };
 		8AA971C2246F18AC00A698C1 /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971C1246F18AC00A698C1 /* Feature.swift */; };
-		8AA971C5246F26EE00A698C1 /* PurchaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AA971C3246F26EE00A698C1 /* PurchaseCollectionViewCell.swift */; };
-		8AA971C6246F26EE00A698C1 /* PurchaseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AA971C4246F26EE00A698C1 /* PurchaseCollectionViewCell.xib */; };
+		8ABFDD4324803844001D6C83 /* SubscriptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABFDD4124803844001D6C83 /* SubscriptionsViewController.swift */; };
+		8ABFDD4424803844001D6C83 /* SubscriptionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8ABFDD4224803844001D6C83 /* SubscriptionsViewController.xib */; };
+		8AD82E03248180F300DE32E4 /* PaidFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD82E02248180F300DE32E4 /* PaidFeatures.swift */; };
 		8AE706F62470A2C300395BE7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE706F52470A2C300395BE7 /* Router.swift */; };
 		8AE706F92470A50500395BE7 /* SearchUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE706F72470A50500395BE7 /* SearchUserTableViewCell.swift */; };
 		8AE706FA2470A50500395BE7 /* SearchUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8AE706F82470A50500395BE7 /* SearchUserTableViewCell.xib */; };
@@ -113,14 +113,14 @@
 		8A536D85246DB42D004AC6B8 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
 		8A53FBE724783BEA0098A468 /* Highlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlight.swift; sourceTree = "<group>"; };
 		8A69AB972472D89300A260BC /* UserDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailInfo.swift; sourceTree = "<group>"; };
+		8AA4CBC52481184D00E43718 /* FeaturesPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesPageViewController.swift; sourceTree = "<group>"; };
 		8AA57EA12478226000A1D874 /* Extension+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIImage.swift"; sourceTree = "<group>"; };
-		8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		8AA971B1246F095200A698C1 /* NibLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		8AA971B3246F104100A698C1 /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		8AA971C1246F18AC00A698C1 /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
-		8AA971C3246F26EE00A698C1 /* PurchaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		8AA971C4246F26EE00A698C1 /* PurchaseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PurchaseCollectionViewCell.xib; sourceTree = "<group>"; };
+		8ABFDD4124803844001D6C83 /* SubscriptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionsViewController.swift; sourceTree = "<group>"; };
+		8ABFDD4224803844001D6C83 /* SubscriptionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubscriptionsViewController.xib; sourceTree = "<group>"; };
+		8AD82E02248180F300DE32E4 /* PaidFeatures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidFeatures.swift; sourceTree = "<group>"; };
 		8AE706F52470A2C300395BE7 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8AE706F72470A50500395BE7 /* SearchUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserTableViewCell.swift; sourceTree = "<group>"; };
 		8AE706F82470A50500395BE7 /* SearchUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchUserTableViewCell.xib; sourceTree = "<group>"; };
@@ -143,17 +143,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		8A1CE0D9247572AA001ACAAA /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				8AA971C3246F26EE00A698C1 /* PurchaseCollectionViewCell.swift */,
-				8AA971C4246F26EE00A698C1 /* PurchaseCollectionViewCell.xib */,
-				8AA971AD246F07F000A698C1 /* OnboardingCollectionViewCell.swift */,
-				8AA971AE246F07F000A698C1 /* OnboardingCollectionViewCell.xib */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
 		8A1CE0DA247572B5001ACAAA /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +307,9 @@
 				8A2C2DBD2474190C007AC333 /* FullsizeImage */,
 				8A364EF52475F05300354359 /* HighlightsPreview */,
 				8A364EFA2475F08800354359 /* FullsizeHighlights */,
+				8ABFDD4124803844001D6C83 /* SubscriptionsViewController.swift */,
+				8ABFDD4224803844001D6C83 /* SubscriptionsViewController.xib */,
+				8AA4CBC52481184D00E43718 /* FeaturesPageViewController.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -346,7 +338,6 @@
 				8A364EFB2475F1A200354359 /* Highlight */,
 				8A1CE0DB247572C0001ACAAA /* Story */,
 				8A1CE0DA247572B5001ACAAA /* Search */,
-				8A1CE0D9247572AA001ACAAA /* Onboarding */,
 				8A1CE0EA2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift */,
 				8A1CE0EB2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib */,
 			);
@@ -381,6 +372,7 @@
 				8AE706FB2470A93B00395BE7 /* User.swift */,
 				8A1E044F247180A000F22984 /* Story.swift */,
 				8A69AB972472D89300A260BC /* UserDetailInfo.swift */,
+				8AD82E02248180F300DE32E4 /* PaidFeatures.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,6 +471,7 @@
 				8A1E046B2471993700F22984 /* StoryHeaderCollectionReusableView.xib in Resources */,
 				8A536D7C246DB390004AC6B8 /* LaunchScreen.storyboard in Resources */,
 				8A364EF92475F08100354359 /* FullsizeHighlightsViewController.xib in Resources */,
+				8ABFDD4424803844001D6C83 /* SubscriptionsViewController.xib in Resources */,
 				8A536D86246DB42D004AC6B8 /* ViewController.xib in Resources */,
 				8A364EF42475DA8A00354359 /* HighlightsPreviewViewController.xib in Resources */,
 				8A2B01E12476BBD7006DD757 /* AlertViewController.xib in Resources */,
@@ -488,8 +481,6 @@
 				8A1CE0ED2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.xib in Resources */,
 				8A1E0466247198D700F22984 /* StoryCollectionViewCell.xib in Resources */,
 				8AE706FA2470A50500395BE7 /* SearchUserTableViewCell.xib in Resources */,
-				8AA971B0246F07F000A698C1 /* OnboardingCollectionViewCell.xib in Resources */,
-				8AA971C6246F26EE00A698C1 /* PurchaseCollectionViewCell.xib in Resources */,
 				8A1E046F2471B0F900F22984 /* FullsizeImageViewController.xib in Resources */,
 				8A1CE0E324759402001ACAAA /* FullsizeImageStoryViewController.xib in Resources */,
 				8A51D1F2246DDBB3001388A4 /* OnboardingViewController.xib in Resources */,
@@ -520,17 +511,18 @@
 				8A53FBE824783BEA0098A468 /* Highlight.swift in Sources */,
 				8A2B01D22476AB5F006DD757 /* VideoDownloadService.swift in Sources */,
 				8AE706F62470A2C300395BE7 /* Router.swift in Sources */,
+				8AD82E03248180F300DE32E4 /* PaidFeatures.swift in Sources */,
 				8A4F29F8247C20E20081948B /* Extension+UICollectionView.swift in Sources */,
+				8ABFDD4324803844001D6C83 /* SubscriptionsViewController.swift in Sources */,
+				8AA4CBC62481184D00E43718 /* FeaturesPageViewController.swift in Sources */,
 				8A1CE0E524759BB4001ACAAA /* Extension+UIViewController.swift in Sources */,
 				8A536D70246DB38F004AC6B8 /* AppDelegate.swift in Sources */,
 				8AE706F92470A50500395BE7 /* SearchUserTableViewCell.swift in Sources */,
 				8A4F29F4247C1B740081948B /* BouncyView.swift in Sources */,
 				8A1CE0EC2475AF77001ACAAA /* HighlightPreviewCollectionViewCell.swift in Sources */,
-				8AA971AF246F07F000A698C1 /* OnboardingCollectionViewCell.swift in Sources */,
 				8AE706FF2470AA7500395BE7 /* UserService.swift in Sources */,
 				8A1E0450247180A000F22984 /* Story.swift in Sources */,
 				8A364EFE2475F1BA00354359 /* HighlightCollectionViewCell.swift in Sources */,
-				8AA971C5246F26EE00A698C1 /* PurchaseCollectionViewCell.swift in Sources */,
 				8AA971C2246F18AC00A698C1 /* Feature.swift in Sources */,
 				8A1E04522471810600F22984 /* StoryService.swift in Sources */,
 				8AE706FC2470A93B00395BE7 /* User.swift in Sources */,
@@ -679,7 +671,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 782QM36KW5;
 				INFOPLIST_FILE = "Story Saver/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -698,7 +690,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 782QM36KW5;
 				INFOPLIST_FILE = "Story Saver/Resources/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -27,6 +27,7 @@ class FullsizeImageViewController: UIViewController {
 		scrollView.delegate = self
 		dataProvider.getFullsizeProfileImage(user) { (url) in
 			if let url = url {
+				print(url.absoluteString.count)
 				Nuke.loadImage(with: url, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: self.imageView) { (_) in
 					self.profileUrl = url
 					self.setZoomParameters(self.scrollView.bounds.size)

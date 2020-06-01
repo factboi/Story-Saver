@@ -44,14 +44,16 @@ class StoriesViewController: UIViewController {
 		sender.endRefreshing()
 	}
 	
+	
+	
 	private func getStories() {
 		if user.isPrivate {
-			collectionView.setEmptyViewWithAnimation(emoji: "😭", message: "User Is Private")
+			collectionView.setEmptyViewWithAnimation(emoji: "😭", message: "User is private.")
 		} else {
 			dataProvider.getStories(user) { (stories) in
 				stories.isEmpty ? self.collectionView.setEmptyViewWithAnimation(emoji: "😭", message: "No Stories") : self.collectionView.restore()
 				self.stories = stories
-				self.collectionView.reloadSections(IndexSet(integer: 0))
+				self.collectionView.reloadSections(IndexSet(integer: .zero))
 			}
 		}
 	}
@@ -82,9 +84,15 @@ class StoriesViewController: UIViewController {
 		collectionView.register(StoryHeaderCollectionReusableView.nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: StoryHeaderCollectionReusableView.name)
 	}
 	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		navigationController?.setNavigationBarHidden(false, animated: true)
+	}
+	
 	override func viewWillLayoutSubviews() {
 		super.viewWillLayoutSubviews()
 		collectionView.collectionViewLayout.invalidateLayout()
+		
 	}
 	
 	private func presentAlert(_ story: Story) {
@@ -202,18 +210,13 @@ extension StoriesViewController: UICollectionViewDataSource {
 		let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: StoryHeaderCollectionReusableView.name, for: indexPath) as! StoryHeaderCollectionReusableView
 		header.onExpandButtonClicked = { [weak self] in
 			if let user = self?.user {
-				self?.present(FullsizeImageViewController(user: user), animated: true)
+				self?.navigationController?.present(FullsizeImageViewController(user: user), animated: true)
 			}
 		}
-
 		header.onHighlightPreviewTapped = { [weak self] user, highlightHtmlModel in
 			self?.navigationController?.pushViewController(FullsizeHighlightsViewController(user: user, highlightJsonModel: highlightHtmlModel), animated: true)
 		}
-		
-		if let info = userDetailInfo, let highlightsHtmlModels = highlightHtmlModels {
-			header.set(info, user: user, highlightsHtmlModels: highlightsHtmlModels)
-		}
-		
+		header.set(userDetailInfo, user: user, highlightsHtmlModels: highlightHtmlModels ?? [])
 		return header
 	}
 }
@@ -221,8 +224,7 @@ extension StoriesViewController: UICollectionViewDataSource {
 extension StoriesViewController: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		let story = stories[indexPath.item]
-
-		story.video.isEmpty ? present(FullsizeImageStoryViewController(contentUrlString: story.preview), animated: true) : playVideoByUrl(story.video)
+			story.video.isEmpty ? present(FullsizeImageStoryViewController(contentUrlString: story.preview), animated: true) : playVideoByUrl(story.video)
 	}
 }
 

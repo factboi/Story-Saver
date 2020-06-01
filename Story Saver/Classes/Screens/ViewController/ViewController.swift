@@ -24,9 +24,15 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		navigationController?.pushViewController(FeaturesPageViewController(), animated: false)
 		delegating()
 		registerCells()
 		setupNavBar()
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		searchController.becomeFirstResponder()
 	}
 	
 	private func registerCells() {
@@ -57,12 +63,18 @@ class ViewController: UIViewController {
 		searchController.searchBar.resignFirstResponder()
 	}
 	
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+		searchController.dismiss(animated: true)
+	}
+	
 }
 
 extension ViewController: UISearchBarDelegate {
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		tableView.restore()
 		users.removeAll()
+		tableView.reloadSections([0], with: .fade)
 		if let username = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) {
 			dataProvider.getUsers(username) { (users) in
 				users.isEmpty ? self.tableView.setEmptyView(emoji: "😭", message: "No Such Users") : self.tableView.restore()
@@ -75,8 +87,8 @@ extension ViewController: UISearchBarDelegate {
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		users.removeAll()
+		tableView.reloadData()
 		tableView.setEmptyView(emoji: "🌄", message: "Search Over Instagram Users")
-		tableView.reloadSections([0], with: .fade)
 	}
 }
 

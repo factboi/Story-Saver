@@ -31,7 +31,7 @@
                     </subviews>
                 </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dx1-jn-Vr6">
-                    <rect key="frame" x="378" y="48" width="32" height="32"/>
+                    <rect key="frame" x="366" y="48" width="32" height="32"/>
                     <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="dx1-jn-Vr6" secondAttribute="height" multiplier="1:1" id="9vr-kj-WwB"/>
@@ -45,7 +45,7 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dx1-jn-Vr6" secondAttribute="trailing" constant="4" id="U0F-Jn-8ue"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dx1-jn-Vr6" secondAttribute="trailing" constant="16" id="U0F-Jn-8ue"/>
                 <constraint firstItem="dx1-jn-Vr6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="XSR-gi-eaP"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
