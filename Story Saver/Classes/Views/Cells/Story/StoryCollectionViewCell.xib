@@ -52,6 +52,10 @@
                             <action selector="downloadButtonClicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="EXw-9G-D4T"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05C-6w-QB4">
+                        <rect key="frame" x="14" y="10" width="30" height="30"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>

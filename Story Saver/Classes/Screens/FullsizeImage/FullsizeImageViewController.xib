@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +13,7 @@
                 <outlet property="dismissButton" destination="dx1-jn-Vr6" id="ynE-aC-onl"/>
                 <outlet property="imageView" destination="IZC-Tz-FLQ" id="IGD-XA-LBO"/>
                 <outlet property="scrollView" destination="ASo-aT-hjl" id="b8z-w6-m42"/>
+                <outlet property="shareButton" destination="YfC-RO-tXX" id="cW8-Nr-MOe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -42,11 +44,25 @@
                         <action selector="dismissButtonClicked:" destination="-1" eventType="touchUpInside" id="V6Y-YD-JJf"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfC-RO-tXX">
+                    <rect key="frame" x="16" y="48" width="32" height="32"/>
+                    <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="contentEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                    <state key="normal" image="web"/>
+                    <connections>
+                        <action selector="shareButtonClicked:" destination="-1" eventType="touchUpInside" id="UiG-yL-0FJ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="YfC-RO-tXX" firstAttribute="width" secondItem="dx1-jn-Vr6" secondAttribute="width" id="2oA-y8-Aob"/>
+                <constraint firstItem="YfC-RO-tXX" firstAttribute="top" secondItem="dx1-jn-Vr6" secondAttribute="top" id="MoH-GV-nRT"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dx1-jn-Vr6" secondAttribute="trailing" constant="16" id="U0F-Jn-8ue"/>
                 <constraint firstItem="dx1-jn-Vr6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="4" id="XSR-gi-eaP"/>
+                <constraint firstItem="YfC-RO-tXX" firstAttribute="bottom" secondItem="dx1-jn-Vr6" secondAttribute="bottom" id="ZN7-Vx-sET"/>
+                <constraint firstItem="YfC-RO-tXX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="roX-eL-f3v"/>
+                <constraint firstItem="YfC-RO-tXX" firstAttribute="height" secondItem="dx1-jn-Vr6" secondAttribute="height" id="zvc-oN-6BC"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="44.927536231884062" y="110.49107142857143"/>
@@ -54,5 +70,6 @@
     </objects>
     <resources>
         <image name="CloseIcon" width="17" height="17"/>
+        <image name="web" width="64" height="64"/>
     </resources>
 </document>

@@ -15,13 +15,25 @@ import WebKit
 
 class UserService: NSObject {
 	
-	private let webView = WKWebView()
+	private var webView: WKWebView!
 	
 	private var imageCompletion: ((_ imageUrlString: String?) -> Void)?
 	
+	private let scriptJSString = "$(document).ready(function() {window.webkit.messageHandlers.clickListener.postMessage('pizda');});"
+	
+	
+	
+	fileprivate func configureWebView() {
+		let config = WKWebViewConfiguration()
+		let script = WKUserScript(source: scriptJSString, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+		config.userContentController.addUserScript(script)
+		config.userContentController.add(self, name: "clickListener")
+		webView = WKWebView(frame: .zero, configuration: config)
+	}
+	
 	override init() {
 		super.init()
-		self.webView.navigationDelegate = self
+		configureWebView()
 	}
 	
 	func getUsers(with profileName: String, completion: @escaping ([UserJsonObject]?) -> Void) {
@@ -82,20 +94,19 @@ class UserService: NSObject {
 	
 }
 
-extension UserService: WKNavigationDelegate {
-	func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-		DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-			webView.evaluateJavaScript("document.getElementsByClassName('download-btn')[0].toString()") { (html, error) in
-				guard error == nil else {
-					self.imageCompletion?(nil)
-					return
-				}
-				guard let imageUrlString = html as? String else {
-					self.imageCompletion?(nil)
-					return
-				}
-				self.imageCompletion?(imageUrlString)
-			}			
+extension UserService: WKScriptMessageHandler {
+	func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+		print(message.body)
+		webView.evaluateJavaScript("document.getElementsByClassName('download-btn')[0].toString()") { (html, error) in
+			guard error == nil else {
+				self.imageCompletion?(nil)
+				return
+			}
+			guard let imageUrlString = html as? String else {
+				self.imageCompletion?(nil)
+				return
+			}
+			self.imageCompletion?(imageUrlString)
 		}
 	}
 }

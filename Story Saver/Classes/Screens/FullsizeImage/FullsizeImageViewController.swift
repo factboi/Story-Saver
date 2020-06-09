@@ -16,10 +16,16 @@ class FullsizeImageViewController: UIViewController {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var dismissButton: UIButton!
 	
+	@IBOutlet weak var shareButton: UIButton! {
+		didSet {
+			shareButton.isEnabled = false
+			shareButton.alpha = 0
+		}
+	}
 	
 	private let user: User
 	private var profileUrl: URL?
-	private lazy var alertViewController = AlertViewController()
+	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -27,11 +33,20 @@ class FullsizeImageViewController: UIViewController {
 		scrollView.delegate = self
 		dataProvider.getFullsizeProfileImage(user) { (url) in
 			if let url = url {
-				print(url.absoluteString.count)
+				guard url.absoluteString.count > 30 else {
+					let alert = UIAlertController(title: "Ooops!", message: "Error occured, please try again.", preferredStyle: .alert)
+					alert.addAction(UIAlertAction(title: "OK", style: .default))
+					self.present(alert, animated: true)
+					return
+				}
 				Nuke.loadImage(with: url, options: .init(transition: .fadeIn(duration: 0.3, options: .curveEaseOut)), into: self.imageView) { (_) in
 					self.profileUrl = url
 					self.setZoomParameters(self.scrollView.bounds.size)
 					self.centerImage()
+					UIView.animate(withDuration: 0.3) {
+						self.shareButton.alpha = 1
+						self.shareButton.isEnabled = true
+					}
 				}
 			}
 		}
@@ -75,6 +90,14 @@ class FullsizeImageViewController: UIViewController {
 		fatalError("init(coder:) has not been implemented")
 	}
 	
+	@IBAction func shareButtonClicked(_ sender: UIButton) {
+		if let image = imageView.image {
+			let activityViewController = UIActivityViewController(activityItems: [image] , applicationActivities: nil)
+			activityViewController.popoverPresentationController?.sourceView = self.view
+			self.present(activityViewController, animated: true)
+		}
+	}
+	
 	@IBAction func dismissButtonClicked(_ sender: UIButton) {
 		dismiss(animated: true, completion: nil)
 	}
@@ -85,6 +108,7 @@ extension FullsizeImageViewController {
 		static func decorate(_ vc: FullsizeImageViewController) {
 			vc.dismissButton.round()
 			vc.dismissButton.applyBorder(borderColor: .black, borderWidth: 0.5)
+			vc.shareButton.round()
 		}
 	}
 }

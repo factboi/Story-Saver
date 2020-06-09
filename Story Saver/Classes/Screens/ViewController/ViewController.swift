@@ -30,10 +30,7 @@ class ViewController: UIViewController {
 		setupNavBar()
 	}
 	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		searchController.becomeFirstResponder()
-	}
+	
 	
 	private func registerCells() {
 		tableView.register(SearchUserTableViewCell.nib, forCellReuseIdentifier: SearchUserTableViewCell.name)
@@ -60,7 +57,7 @@ class ViewController: UIViewController {
 	
 	override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 		super.touchesBegan(touches, with: event)
-		searchController.searchBar.resignFirstResponder()
+		searchController.dismiss(animated: true)
 	}
 	
 	override func viewWillDisappear(_ animated: Bool) {
@@ -87,7 +84,7 @@ extension ViewController: UISearchBarDelegate {
 	
 	func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
 		users.removeAll()
-		tableView.reloadData()
+		UIView.transition(with: tableView, duration: 0.3, options: .transitionCrossDissolve, animations: {self.tableView.reloadData()}, completion: nil)
 		tableView.setEmptyView(emoji: "🌄", message: "Search Over Instagram Users")
 	}
 }
